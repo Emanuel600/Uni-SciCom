@@ -16,11 +16,11 @@ double coss(double ang, int alg);
 double raiz(double x, int alg, double inic);
 /* Calcula soma do inverso dos quadrados de x termos */
 // Do maior para o menor
-double som_in_mai(int x);
+float som_in_mai(int x);
 // Do menor para o maior
-double som_in_men(int x);
+float som_in_men(int x);
 
 // Calcula fatorial de n, espera números inteiros
-int fact(int n);
+double fact(double n);
 
 #endif /* CALC_H_ */
