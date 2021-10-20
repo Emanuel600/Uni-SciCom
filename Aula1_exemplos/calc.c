@@ -20,8 +20,6 @@ double expon(double x, int alg){
 		// Calcular erro aproximado
 		double err = 100*(res-re1)/res;
 
-		printf("Err: %g\n", err);
-
 		if (err < es )
 			break;
 		i++;
@@ -29,7 +27,7 @@ double expon(double x, int alg){
 
 	return res;
 }
-// Calcula cosseno($ang) para $alg algarismos
+// Calcula cosseno($ang) para $alg algarismos => A partir de testes com cos(1), só funciona até 9 algorismos. | Provavelmente diferente para outros valores |
 double coss(double ang, int alg){
 	double res = 1;
 	double i = 1;
@@ -43,7 +41,7 @@ double coss(double ang, int alg){
 
 		printf("res: %g\n", res);
 
-		// Calcular erro aproximado
+		// Calcular erro aproximado | abs() retorna aviso ("Declaração implícita") |
 		double err = 100*(res-re1);
 
 		if (err<0)
@@ -51,10 +49,9 @@ double coss(double ang, int alg){
 
 		err /= res;
 
+		// Previne loop infinito => Não sei exatamente o que está causando o erro
 		if(isnan(err))
 			break;
-
-		printf("Err: %g\n", err);
 
 		if (err < es )
 			break;
@@ -70,8 +67,7 @@ double raiz(double x, int alg, double inic){
 
 	while(1){
 		res = (inic + x/inic)/2;
-		//printf("Aproxima sqrt(%g) como {%g}\n", x, res);
-		// Calcular erro | abs() não funcionou |
+		// Calcular erro | abs() retorna aviso ("Declaração implícita") |
 		double err = (res-inic)*100;
 		if (err<0)
 			err *= -1;
