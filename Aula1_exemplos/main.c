@@ -4,17 +4,12 @@
 #include "calc.h"
 
 int main(){
-	int x;
-	double res_mai, res_men;
+	int alg;
+	double x, res, inicial;
 
-	printf("Entre com o valor de x\n");
-
-	scanf("%d", &x);
-
-	res_mai = som_in_mai(x);
-	res_men = som_in_men(x);
-
-	printf("O valor da soma com %d termos:\n", x);
-	printf("maior->menor: %.16lf\n", res_mai);
-	printf("menor->maior: %.16lf\n", res_men);
+	// Calcular e^x
+	printf("Entre os números x, algarismos significativos e inicial\n");
+	scanf("%lf %d %lf", &x, &alg, &inicial);
+	res = raiz(x, alg, inicial);
+	printf("raiz(%g) = %g\n", x, res);
 }
