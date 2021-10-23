@@ -1,0 +1,6 @@
+	Para dv/dt = g - v²(c/m), temos que dt=dv/{g-v²(c/m)}, como [c, m, g] são constantes,
+    podemos substituir c/m por k, resultando em dt=dv/(g-kv²).
+    
+    Integrando: arctanh(v*sqrt(k/g)/sqrt(kg) = t + C(0) ; Como C(0) é o coeficiente de arrasto
+    inicial, C(0)=0. Assim temos t = arctanh(v*sqrt(k/g)/sqrt(kg) ou:
+    v = sqrt(g/k)*(tanh(t*sqrt(gk)) = sqrt(mg/c)*tanh(t*sqrt(cg/m))
