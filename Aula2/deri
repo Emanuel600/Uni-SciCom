@@ -1,4 +1,4 @@
-	Aproximando utilizando séries de Taylor teremos:
+	Aproximando utilizando séries de Taylor temos:
 
 	f(x+h) = f(x) + f'(x)h + f''(x)h²/2 + f'''(x)h³/3!
 	f(x-h) = f(x) - f'(x)h + f''(x)h²/2 - f'''(x)h³/3!
@@ -9,6 +9,7 @@
 	Assim:	f(x+2h)-f(x-2h) - 2[f(x+h)-f(x-h)] = f'''(x)2h³+eh⁵
 	(1/2h³)*{f(xi+2)-f(xi-2) - 2[f(xi+1) - f(xi-1)]} + eh²=f'''(x)
 
-	Sendo eh² o erro de truncamento, este é representado por O(h²)
+	Sendo eh^x o erro de truncamento, este é representado por O(h^x),
+    como eh⁵/h³=eh², temos como erro de truncamento O(h²)
 	\===/
 	Resultando em: f'''(x) = [f(xi+2)-f(xi-2) - 2f(xi+1)+2f(xi-1)]/2h³ + O(h²)
