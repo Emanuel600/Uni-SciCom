@@ -1,0 +1,27 @@
+	Função a ser estimada: f(x)=cos(x)-(x*e^x) para -2=<x<=0 com |Ea|<1%
+
+	Como valor esquerdo inicial, f(-2)=cos(-2)+2e^-2 = -0.14547627; como o número
+    está consideravelmente perto de 0, vou escolher como valor direito x = -1.7
+
+	Para o valor direito temos f(-1.7)=cos(-1.7)+1.7e^-1.7 = 0.18171750, como
+    f(-1.7)*f(-2)<0, temos que a raíz se encontra entre estes dois valores. A raíz
+    é estimada como xr=(-2+[-1.7])/2 = -1.85.
+
+	Calculando: f(-1.85)=cos(-1.85)+1.85e^-1.85 = 0.015298511, como f(-2)*f(-1.85)<0
+    temos que o valor esquerdo continua valendo -2, mas agora o valor direito vale -1.85.
+    Assim, quando calculamos a nova raíz temos: xr=(-2 + [-1.85])/2 = -1.925.
+
+	Calculando f(-1.925)=cos(-1.925)+1.925e^-1.925 = -0.066032750, para calcular o erro
+    aproximado temos: 100* |(-1.925 - [-1.85])/-1.925| = 3.8961039%, como o erro aproximado
+    é maior que a taxa de tolerância dada e f(-1.925)*f(-1.85)<0, a raíz é reestimada como:
+    xr = (-1.925 + [-1.85])/2 = -1.8875.
+
+	Calculando f(-1.8875) = -0.025574066, temos como erro aproximado:
+    100* |(-1.8875 - [-1.85])/-1.8875| = 1.986755%, como o erro aproximado é maior que a taxa
+    de tolerância dada e f(-1.8875)*f(-1.85)<0, xr=(-1.8875 + [-1.85])/2 = -1.86875.
+
+	Calculando f(-1.86875) = -0.0051858173, com erro= -1.0033445%, como o erro aproximado
+    é maior que o erro permitido e f(-1.86875)*f(-1.85)<0, a raíz é reestimada pela fórmula
+    xr = (-1.86875 + [-1.85])/2 = -1.859375 com erro aproximado de 0.50420168%, como o erro
+    aproximado é menor que a taxa de tolerância, podemos dizer que uma raíz para f(x) se
+    encontra em f(-1.86875).
