@@ -25,3 +25,6 @@
     xr = (-1.86875 + [-1.85])/2 = -1.859375 com erro aproximado de 0.50420168%, como o erro
     aproximado é menor que a taxa de tolerância, podemos dizer que uma raíz para f(x) se
     encontra em f(-1.86875).
+
+	=> Resultado script scilab com func = 'cos(x)-x*%e^x' e
+    '[raiz,iter]=bissecao(fun, -2, 1.7, 0.1)', na iteração 8 a raíz é igual a -1.8628906
