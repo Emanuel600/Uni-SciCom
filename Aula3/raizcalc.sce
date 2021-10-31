@@ -10,7 +10,7 @@ function [raiz, i]=bissecao(funcao, xl, xu, es)
     // xu é o limite superior do intervalo de busca
     // es é o criterio de parada que é opcional
     // Exemplo de chamada:
-    // exec('path\ bissecao.sci',-1)
+    // exec('Documents/sci-code/raizcalc.sce',-1)
     // fun = 'log(x) + x'
     // [raiz,iter]=bissecao(fun, 0.1, 2, 0.1)
     
