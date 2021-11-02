@@ -1,8 +1,8 @@
-// Função dada pelo professor
+// Função dada pelo professor modificada pra utilizar método da falsa posição
 
 function [raiz, i]=fal_pos(funcao, xl, xu, es)
-    // Cálculo das raizes pelo processo da bisseção
-    // function [raiz,iter]=bissecao(funcao, xl, xu, es)
+    // Cálculo das raizes pelo processo da falsa posição
+    // function [raiz,iter]=fal_pos(funcao, xl, xu, es)
     // onde raiz é a raiz procurada de funcao
     // i é o num de iterações para o erro especificado
     // funcao é a função de entrada literal em x
