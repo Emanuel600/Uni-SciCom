@@ -31,3 +31,8 @@ Uni - Computação Científica
   Mostrar que a aproximação centrada de d³f/dx³ em x = xi; i = 3, 4, ..., n-2 é calculada por:
   
   f'''(xi) ≃ (( f(xi+2) - f(xi-2) - 2f(xi+1) + 2f(xi-1) ) / 2h³) + 0(h²)
+
+# => Aula 3
+  - Exercício 2: Utilizar o método da bisseção para **maualmente** estimar as raízes de f(x) = cos(x) -xe^x
+    - Utilizar função scilab para confirmar resultado
+  - Exercício 3: Utilizar função scilab para resolver problema apresentado nos slides
