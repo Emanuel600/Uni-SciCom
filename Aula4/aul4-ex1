@@ -6,4 +6,4 @@
 	Utilizando o método da secante (Modificado): xi=2.15, f(xi)=-0.061625, d=1e-4,
     d*xi=2.15e-4 e f(xi+d*xi)=-0.058643189.
     x(i+1)=xi-{[f(xi)*d*xi]/[f(xi+d*xi)-f(xi)]} = 2.1544434, com f(x(i+1))=0.00012128476
-    temos que um erro de 0.20624352%, o que já está abaixo de 1%.
+    temos um erro de 0.20624352%, o que já está abaixo de 1%.
