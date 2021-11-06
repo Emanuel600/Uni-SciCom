@@ -1,0 +1,15 @@
+	Para evitar confusão, distância (x) será definida como 'd'.
+	Define-se as variáveis:
+		- v= 30
+		- d= 90
+		- y0=1.8
+		- y= 1
+		- g= 9.80665
+	Define-se a função fun= 'tan(x)*d - (g ./ 2*v^2*cos(x)^2)*d^2 + y0 - y'.
+    Chama-se '[raiz,iter]=sec_mod(fun)', observa-se graficamente que raiz≃0.5.
+    Entrando o valor aproximado como valor inicial, temos na 5ª iteração que a
+    raíz é aproximadamente igual a 0.6617976.
+
+	É possível confirmar colocando o valor da raiz na fórmula, onde temos
+    que: fun(raiz)= 3.131D-14. Pode-se afirma que a resposta possui 13 dígitos
+    de precisão.
