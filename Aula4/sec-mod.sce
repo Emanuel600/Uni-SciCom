@@ -9,10 +9,9 @@ function [raiz, iter]=sec_mod(funcao, dxi, es, maxi)
     // maxi é o numero maximo de iterações e é opcional
     // A cond. inicial x0 é escolhida com auxilio de um gráfico
     // Exemplo de chamada:
-    // fun= 'tan(x)*d - (g ./ (2*(v^2)*cos(x)^2))*d^2 + y0 - y'
     // fun = ‘log(x) + x‘
     // [raiz,iter]=sec_mod(fun, 0.001, 0.0001,50)
-    // [raiz,iter]=sec_mod(fun)
+    //
     // Construção do gráfico da função
     a = input("Entre com o limite inferior de x a = ");
     b = input("Entre com o limite superior de x b = ");
