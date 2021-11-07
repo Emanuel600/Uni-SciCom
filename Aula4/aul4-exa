@@ -1,0 +1,30 @@
+	Rearranjando a função temos que f(x)=(x-1)(x-1)(x-1)(x+5)
+	Definindo:
+		- fun= 'x^4 + 2*x^3 - 12*x^2 + 14*x - 5'
+		- dxdt= '4*x^3 + 6*x^2 - 24*x + 14'
+	Chamando '[raiz,iter]=new_raphson(fun, dxdt, 0.0001,50)'
+	Entrando:
+		1: Limite Inferior: -6
+		2: Limite Superior: 6
+		3: Valor Inicial:   -5
+	Encontrou raiz igual a 5 na primeira iteração.
+	Entrando:
+		1: Limite Inferior: -6
+		2: Limite Superior: 6
+		3: Valor Inicial:   1
+	Raiz divergiu com derivada=0
+
+	Utilizando método modificado, se adiciona a variável ddt=
+    '12*x^2 + 12*x - 24'.
+	Entrando:
+		1: Limite Inferior: -6
+                2: Limite Superior: 6
+                3: Valor Inicial:   1
+	Raiz diverge pois denominador=0, substituindo o Valor
+    Inicial por 1.1 a raiz converge em x=1 na 3ª iteração.
+	Voltando ao método normal e realizando a mesma substituição,
+    vemos que converge na "raiz" x=1.0000044 na 29ª iteração.
+
+	Resultado: Apesar do método convergir mais rapida e precisamente,
+    como o denominador é f'(x)²-f(x)*f''(x), quando x é raiz (f(x)=0) e a
+    derivada é igual a 0 (f'(x)²=0) o denominador ainda equivale a 0.
