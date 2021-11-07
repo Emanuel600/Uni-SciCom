@@ -36,3 +36,10 @@ Uni - Computação Científica
   - Exercício 2: Utilizar o método da bisseção para **maualmente** estimar as raízes de f(x) = cos(x) -xe^x
     - Utilizar função scilab para confirmar resultado
   - Exercício 3: Utilizar função scilab para resolver problema apresentado nos slides
+
+# => Aula 4
+  - Exercício 1: Utilizar método Newton-Raphson e secante modificado para estimar raízes de f(x)=x³-10 em 0<=x<=4
+    - Manualmente, com critério de parada |es|<1%
+    - Com auxílio de funções scilab e critério de parada 1e-4%
+  - Exercício 2: Calcular frequência w do circuito RLC, descrito no slide, para que tenha uma impedância de 100Ω com o método da secante modificado
+  - Exercício 3: Encontrar ângulo inicial do lançamento, descrito no slide, para que um receptor a 90m de distância receba a bola a 1m de altura
