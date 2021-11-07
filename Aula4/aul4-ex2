@@ -1,0 +1,16 @@
+	Temos que Z= 1/sqrt(1/R²+(1/Lw - Cw)²), para calcular definimos as constantes:
+		- r= 225
+		- c= 6e-7
+		- l= 0.5
+		- z= 100
+		- fun= '(1 ./ sqrt(1/r^2 + ( (1 ./ l*x) - c*x)^2)) - z'
+	Chamando [raiz,iter]=sec_mod(fun), define-se o limite [0-4]. Após analisar
+    gráficamente, define-se o valor inicial como 0.007. Após 5 iterações a raiz
+    é calculada como aproximadamente 0.0044790
+
+	Para confirmar, podemos substitur x por 'raiz' na função 'fun'. Calculando
+    pelo scilab recebemos que Z(raiz)= -1.067D-11 (o que significa que possui ~10
+    dígitos de precisão).
+
+	Ou seja, o valor da frequência w que resulta em uma impedância Z de 100Ω
+    é aproximadamente a 0.0044790
