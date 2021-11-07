@@ -1,3 +1,4 @@
+// Função criada a partir da função do professor
 function [raiz, iter]=new_raph_mod(funcao, derivada, deriseg, es, maxi)
     // Cálculo das raizes por Newton-Raphson modificado
     // onde raiz é a raiz procurada de funcao
