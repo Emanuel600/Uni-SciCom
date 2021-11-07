@@ -1,3 +1,4 @@
+// Função dada pelo professor
 function [raiz, iter]=sec_mod(funcao, dxi, es, maxi)
     // Cálculo das raizes pelo métod da secante modificado
     // function [raiz,iter]=sec_mod(funcao, derivada, x0, es, it)
