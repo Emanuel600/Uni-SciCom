@@ -1,3 +1,4 @@
+// Função dada pelo professor
 function [raiz, iter]=new_raphson(funcao, derivada, es, maxi)
     // Cálculo das raizes por Newton-Raphson
     // onde raiz é a raiz procurada de funcao
