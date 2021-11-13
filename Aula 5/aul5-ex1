@@ -1,30 +1,35 @@
-	Como os valores exatos são x1=1/3 e x2=2/3, podemos afirmar que
-    b[11]= 1/(3e4)+2/3 = 0.6669999...
-	Definindo:
+	// Não sei muito bem o que o professor quer dizer com os algarismos
+    // , mas segui com o que acredito ser a melhor interpretação
+
+	Com 3 algarismos significativos;
+	Definimos:
 		- A= [1e-4 1 ; 1 1]
-		- b= [0.67 ; 1]
+		- b= [0.67 ; 1] // Algarismos após a vírgula são significativos
 	Resultado: x1=0.3300330, x2= 0.6699670
 
-	Redefinindo b= [0.667 ; 1]
+	Com 4 algarismos significativos;
+	Redefinimos b= [0.667 ; 1]
 	Resultado: x1= 0.3330333, x2= 0.6669667
 
-	Redefinindo b= [0.6670 ; 1]
+	Com 5 algarismos significativos;
+	Redefinindo b= [0.6667 ; 1]
 	Resultado: x1= 0.3330333, x2= 0.6669667
 
-	Redefinindo b= [0.66700 ; 1]
+	Com 6 algarismos significativos;
+	Redefinindo b= [0.66669 ; 1] // Sabendo que x1=1/3
 	Resultado: x1= 0.3330333, x2= 0.6669667
 
 	===\ /===
-	Redefinindo:
-		- A: [1 1 ; 1e-4 1]
-		- b: [1 ; 0.67]
+	Redefinindo com 3 algarismos significativos:
+		- A= [1 1 ; 1e-4 1]
+		- b= [0.67 ; 1]
 	Resultado: x1= 0.3300330, x2= 0.6699670
 
-	Redefinindo b= [1 ; 0.667]
+	Redefinindo com 4 algarismos: b= [0.667 ; 1]
 	Resultado: x1= 0.3330333, x2= 0.6669667
 
-	Redefinindo b= [1 ; 0.6670]
+	Redefinindo com 5 algarismos: b= [0.6667 ; 1]
 	Resultado: x1= 0.3330333, x2= 0.6669667
 
-	Redefinindo b= [1 ; 0.66700]
+	Redefinindo com 6 algarismos: b= [0.66669 ; 1]
         Resultado: x1= 0.3330333, x2= 0.6669667
