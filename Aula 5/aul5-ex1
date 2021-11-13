@@ -1,0 +1,39 @@
+	// Não sei muito bem o que o professor quer dizer com os algarismos
+    // , mas segui com o que acredito ser a melhor interpretação
+
+	Com 3 algarismos significativos;
+	Definimos:
+		- A= [1e-4 1 ; 1 1]
+		- b= [0.67 ; 1] // Algarismos após a vírgula são significativos
+	Resultado: x1=0.3300330, x2= 0.6699670
+
+	Com 4 algarismos significativos;
+	Redefinimos b= [0.667 ; 1]
+	Resultado: x1= 0.3330333, x2= 0.6669667
+
+	Com 5 algarismos significativos;
+	Redefinindo b= [0.6667 ; 1]
+	Resultado: x1= 0.3330333, x2= 0.6669667
+
+	Com 6 algarismos significativos;
+	Redefinindo b= [0.66669 ; 1] // Sabendo que x1=1/3
+	Resultado: x1= 0.3333433, x2= 0.6666567
+
+	===\ /===
+	Redefinindo com 3 algarismos significativos:
+		- A= [1 1 ; 1e-4 1]
+		- b= [1 ; 0.67]
+	Resultado: x1= 0.3300330, x2= 0.6699670
+
+	Redefinindo com 4 algarismos: b= [1 ; 0.667]
+	Resultado: x1= 0.3330333, x2= 0.669667
+
+	Redefinindo com 5 algarismos: b= [1 ; 0.6667]
+	Resultado: x1= 0.3333333, x2= 0.6666667
+
+	Redefinindo com 6 algarismos: b= [1 ; 0.66669]
+        Resultado: x1= 0.3333433, x2= 0.6666567
+
+	Análise: interessantemente, o erro quando pivô=1e-4 foi menor com 6 algarismos (0.00299% para x1
+    e 0.001495% para x2), mas quando pivô=1, foi menor com 5 (0.00001% para x1 e 5e-6% para x2) do que
+    com 6 algarismos (0.00299% para x1 e 0.001495% para x2)

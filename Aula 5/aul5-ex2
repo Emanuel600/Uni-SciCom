@@ -1,0 +1,53 @@
+        Começamos definindo as matrizes:
+        
+        x: 1  2  3
+          |3  1  2|      | 2|
+        A=|6  3 -1| e b= |-2| // Assumindo que o segundo x1 foi um erro
+          |2  3  1|      | 1| // de digitação
+
+        Como a21 é o maior elemento, L1<=>L2
+        
+        x: 1  2  3
+          |6  3 -1|     |-2|
+        A=|3  1  2| e b=| 2|
+          |2  3  1|     | 1|
+          
+        Fazemos L2=L2-(a21/a11)L1 e L3=L3-(a31/a11)L1
+        
+        x: 1   2   3
+          |6   3  -1 |     |-2 |
+        A=|0 -0.5 2.5| e b=| 3 | // Criar submatriz B
+          |0   2  4/3|     |5/3|
+          
+         x:   2   3
+           |-0.5 2.5|=>a1x | 3 |
+         B=|  2  4/3| e b'=|5/3|
+         
+         Como a21 é o maior elemento, L1<=>L2
+         x:   2   3
+           |  2  4/3|      |5/3|
+         B=|-0.5 2.5| e b'=| 3 |
+         
+         Fazendo L2=L2-(a21/a11)L1
+         x: 2     3
+           |2    4/3  |      |  5/3 | =>b11
+         B=|0   8.5/3 | e b'=|3+5/12| =>b21
+         
+         Como a21=0, x3=(b21/a22)= 1.2058824
+         Como 2x2+3x3 = -1/3, x2=(-1/3-3x3)/2= -1.9754902
+         Como 6x1+3x2+2x3=2, x1=(2-3x2-3x3)/6= 0.7181373
+         Obs:Resultado aparenta estar errado, uma vez que substituindo
+     na linha 3 retorna -3.2843137 ao invés de 1.
+         
+         ==/ Utilizando Scilab \==
+         - A= [3 1 2 ; 6 3 -1 ; 2 3 1]
+         - b= [2 ; -2 ; 1]
+         x1= 0.1111111
+         x2= -0.3333333
+         x3= 1
+         
+         OBS: Resultado aparenta estar errado, uma vez que substituindo
+     na linha 3 retorna 0.2222222 ao invés de 1.
+     
+     !== Acho que houve um erro de digitação nos coeficientes, uma vez que nenhum resultado
+ está certo ==!
