@@ -1,3 +1,4 @@
+// Função dada pelo professor
 function x=gaussi(A, b)
     // Eliminação de Gauss Ingênua
     // onde x vetor solução
