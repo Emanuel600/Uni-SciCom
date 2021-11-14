@@ -43,3 +43,9 @@ Uni - Computação Científica
     - Com auxílio de funções scilab e critério de parada 1e-4%
   - Exercício 2: Calcular frequência w do circuito RLC, descrito no slide, para que tenha uma impedância de 100Ω com o método da secante modificado
   - Exercício 3: Encontrar ângulo inicial do lançamento, descrito no slide, para que um receptor a 90m de distância receba a bola a 1m de altura
+
+# => Aula 5
+  - Exercício 1: Utilizar eliminação de Gauss para resolver uma matriz e testar o efeito do pivotamento
+  - Exercício 2: Utilizar eliminação de Gauss para resolver sistema de 3(?) equações
+    - manualmente
+    - função scilab
