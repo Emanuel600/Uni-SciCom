@@ -1,4 +1,3 @@
-// função dada pelo professor
 function x=gauss_pivo(A, b)
   // Eliminação de Gauss com pivotamento
   // onde x vetor solução
@@ -16,6 +15,21 @@ function x=gauss_pivo(A, b)
   end
   nb = n + 1;
   A = [A b]; // obtendo a matriz aumentada
+  // eliminação progressiva
+  for i=1:n-1
+    // pivotamento parcial
+    // encontrar o maior coef. da coluna abaixo do pivo
+    [maior,k]=max(abs(A(i:n,i)));
+    l = i + k - 1;
+    if l~=i then
+    A([l,i],:)=A([i,l],:);
+    end
+    for j=i+1:n
+      A(j,i) = A(j,i)/A(i,i);
+      A(j,i+1:nb)=A(j,i+1:nb)-A(j,i)*A(i,i+1:nb);
+      disp(A);
+     end
+  end
   // substituição regressiva
   x = zeros(n,1);
   x(n)= A(n,nb)/A(n,n);
