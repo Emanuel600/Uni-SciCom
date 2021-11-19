@@ -1,7 +1,7 @@
         Analisando as equações, temos:
-        4800= 0.52*x1 + 0.20*x2 + 0.25*x3
-        5800= 0.30*x1 + 0.50*x2 + 0.20*x3
-        5700= 0.18*x1 + 0.30*x2 + 0.55*x3
+        4800= 0.52*x1 + 0.20*x2 + 0.25*x3  //Recolocando no scilab retorna 4800
+        5800= 0.30*x1 + 0.50*x2 + 0.20*x3  //Recolocando no scilab retorna 5800.0001
+        5700= 0.18*x1 + 0.30*x2 + 0.55*x3  //Recolocando no scilab retorna 5991.6967?
         Definindo U:
            |0.52 0.20 0.25|
         U= |0.30 0.50 0.20| // a11 já é o maior de sua coluna
@@ -18,3 +18,19 @@
            |0.52    0.20      0.25  |
         U= |0.00 0.3846154 0.0557692|
            |0.00    0.00   0.3705128|
+
+        Como não houve "troca de linhas", P permanece igual. Fazendo L*d=b
+        
+           |    1          0    0|    |4800|
+        L= |0.5769231      1    0| b= |5800|
+           |0.3461538 0.5999999 1|    |5700|
+           
+        Calculando d:
+        d1= 4800                = 4800
+        d2= 5800-l21*d1         = 3030.7692
+        d3= 5700-l31*d1-l32*d2  = 2220.0003
+        
+        Fazendo U*x=d
+        x3= d3/a33                 = 5991.6967
+        x2= (d2-a23*x3)/a22        = 7011.2042
+        x1= (d1-a12*x2-a13*x3)/a11 = 3653.5288
