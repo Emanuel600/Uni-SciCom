@@ -2,7 +2,7 @@
         4800= 0.52*x1 + 0.20*x2 + 0.25*x3  //Recolocando no scilab retorna 4800
         5800= 0.30*x1 + 0.50*x2 + 0.20*x3  //Recolocando no scilab retorna 5800.0001
         5700= 0.18*x1 + 0.30*x2 + 0.55*x3  //Recolocando no scilab retorna 5991.6967?
-        Definindo U:
+        Definindo U: //Provavelmente houve algum erro na terceira linha
            |0.52 0.20 0.25|
         U= |0.30 0.50 0.20| // a11 já é o maior de sua coluna
            |0.18 0.30 0.55| // l21= (0.30/0.52) e l31= (0.18/0.52)
