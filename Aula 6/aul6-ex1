@@ -34,3 +34,11 @@
         x3= d3/a33                 = 5991.6967
         x2= (d2-a23*x3)/a22        = 7011.2042
         x1= (d1-a12*x2-a13*x3)/a11 = 3653.5288
+        == Utilizando Scilab ==
+        Definimos:
+        - A= [0.52 0.2 0.25 ; 0.3 0.5 0.2 ; 0.18 0.3 0.55]
+        - b= [4800 ; 5800 ; 5700]
+        Fazendo "fatoralu(A, b)":
+        x1= 4005.8140
+        x2= 7131.3953 // Substituindo nas equações iniciais, todos retornam o que deviam
+        x3= 5162.7907 //sem problemas
