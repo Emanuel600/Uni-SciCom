@@ -1,3 +1,4 @@
+// Função modificada a partir da que foi dada pelo professor
 function x=cholesky(A, b) // Pode verificar simetria verificando soma de A==A'
     // Fatoração de Cholesky
     // function x = cholesly(A, b)
