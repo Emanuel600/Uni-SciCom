@@ -49,3 +49,8 @@ Uni - Computação Científica
   - Exercício 2: Utilizar eliminação de Gauss para resolver sistema de 3(?) equações
     - manualmente
     - função scilab
+
+# => Aula 6
+  - Exercício 1: Resolver manualmente exercício da p. 18 utilizando fatoração LU - Checar com scilab
+  - Exercício 2: Resolver exercício da p. 22 utilizando a função de cholesky dada pelo professor
+  - Exercício 3: Adicionar funcionalidade de detectar se a matriz entrada é simétrica positiva definida, e retornar erro caso não seja
