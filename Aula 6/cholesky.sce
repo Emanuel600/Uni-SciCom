@@ -24,7 +24,7 @@ function x=cholesky(A, b) // Pode verificar simetria verificando soma de A==A'
     if maxi*mini<0 then // Sinais opostos
         error('Matriz não é positiva definida')
     end
-    for i=1:n
+    for i=1:n // Não parece ser a foirma mais elegante
         if (2*main(i)<=sum(A(i,:))) then
             error("matriz não é positiva definida")
         end
