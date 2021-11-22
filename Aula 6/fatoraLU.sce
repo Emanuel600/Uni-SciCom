@@ -1,3 +1,4 @@
+// Função dada pelo professor
 function x=fatoralu(A, b)
     // Fatoração LU
     // function x = fatorlu(A, b)
