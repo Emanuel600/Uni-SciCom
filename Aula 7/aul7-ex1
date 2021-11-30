@@ -9,7 +9,7 @@
        |-0.1091056  -0.0433728  -0.0625  -0.0347522  -0.0315194|
        |-0.0433728  -0.188847   -0.0625  -0.076778   -0.0347522|
    A⁻¹=|  -0.0625    -0.0625     -0.125   -0.0625     -0.0625  |, linhas 2 e 4 são equivalentes
-       |-0.0347522  -0.076778   -0.0625  -0.188847   -0.0433728|, soma das maiores (2,4)= 0.40625
+       |-0.0347522  -0.076778   -0.0625  -0.188847   -0.0433728|, maior das somas: (2,4)= 0.40625
        |-0.0315194  -0.0347522  -0.0625  -0.0433728  -0.1091056|
        
        Confirmando com o scilab, temos:
@@ -30,5 +30,12 @@
        k(A, fro) = 29.393877*0.4100509  = 12.052986
        
        Confirmando no scilab, temos:
-       cond(A, %inf)       => 13
-       cond(A, 'fro')      => 12.052987
+        cond(A, %inf)       => 13
+        cond(A, 'fro')      => 12.052987
+
+        Classificando os sistemas em termos de algarismos significativos (log10(k(A)):
+        Soma de Linhas (k(A, inf)  = log10(13)       = 1.1139434
+        Frobenius      (k(A, 'fro')= log10(12.052986)= 1.0810947
+        
+        Podemos dizer que há uma perda de apenas um algarismo significativo ao resolver o sistema linear.
+    Sendo assim, o sistema é relativamente bem condicionado.
