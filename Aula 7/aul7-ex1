@@ -1,0 +1,41 @@
+        Temos a matriz A:
+
+       |-13 1  6  0 0|
+       | 1 -7  2  2 0|
+    A= | 6 2  -16 2 6| -> Temos que a soma da maior linha é 32 (linha 3)
+       | 0 2   2 -7 1|
+       | 0 0 6  1 -13|
+       
+       |-0.1091056  -0.0433728  -0.0625  -0.0347522  -0.0315194|
+       |-0.0433728  -0.188847   -0.0625  -0.076778   -0.0347522|
+   A⁻¹=|  -0.0625    -0.0625     -0.125   -0.0625     -0.0625  |, linhas 2 e 4 são equivalentes
+       |-0.0347522  -0.076778   -0.0625  -0.188847   -0.0433728|, maior das somas: (2,4)= 0.40625
+       |-0.0315194  -0.0347522  -0.0625  -0.0433728  -0.1091056|
+       
+       Confirmando com o scilab, temos:
+       - norm(A, %inf)      => 32
+       - norm(A^1, %inf)    => 0.40625
+       
+       Aplicando Frobenius temos:
+       
+       F(A)   = sqrt( 13²+1+6² + 1+7²+8 + 80+16² + 9+7² + 37+13² ) = 29.393877
+       F(A⁻¹) = sqrt( A.^2 ) = sqrt(0.1681418) = 0.4100509
+       
+       Confirmando no scilab, temos:
+       - norm(A, 'fro')     => 29.393877
+       - norm(A⁻¹, 'fro')   => 0.4100509
+       
+       Para os condicionamentos, temos:
+       k(A, inf) = 32*0.40625           = 13
+       k(A, fro) = 29.393877*0.4100509  = 12.052986
+       
+       Confirmando no scilab, temos:
+        cond(A, %inf)       => 13
+        cond(A, 'fro')      => 12.052987
+
+        Classificando os sistemas em termos de algarismos significativos (log10(k(A)):
+        Soma de Linhas (k(A, inf)  = log10(13)       = 1.1139434
+        Frobenius      (k(A, 'fro')= log10(12.052986)= 1.0810947
+        
+        Podemos dizer que há uma perda de apenas um algarismo significativo ao resolver o sistema linear.
+    Sendo assim, o sistema é relativamente bem condicionado.
