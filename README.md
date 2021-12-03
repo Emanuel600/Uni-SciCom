@@ -54,3 +54,7 @@ Uni - Computação Científica
   - Exercício 1: Resolver manualmente exercício da p. 18 utilizando fatoração LU - Checar com scilab
   - Exercício 2: Resolver exercício da p. 22 utilizando a função de cholesky dada pelo professor
   - Exercício 3: Adicionar funcionalidade de detectar se a matriz entrada é simétrica positiva definida, e retornar erro caso não seja
+
+# => Aula 7
+  - Exercício 1: Calcular norma e condicionamento de uma matriz (manualmene e com Scilab)
+  - Exercício 2: Calcular matriz inversa (com Scilab) e analisar o quanto a fonte indicada contribui para i2
