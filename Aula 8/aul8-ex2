@@ -1,0 +1,47 @@
+                Temos o sistema:
+                
+                -0.5 x1-x2 =-4
+                2x1 - 3x2  = 6
+                
+                Definindo:
+                - x: x1=0 ; x2=0
+                - a: a11=-0.5 ; a12=-1 ; a21=2 ; a22=-3
+                - b: b1=-4 ; b2=6
+                
+                Calculando: // Confirmado com `gauss_sidel`
+                // Primeira Iteração
+                x1= (b1-a12*x2)/a11= 8
+                x2= (b2-a21*x1)/a22= 3.3333333
+                // Segunda Iteração
+                x1= (b1-a12*x2)/a11= 1.3333333
+                x2= (b2-a21*x1)/a22=-1.1111111
+                // Terceira Iteração
+                x1= (b1-a12*x2)/a11= 10.222222
+                x2= (b2-a21*x1)/a22= 4.8148148
+                
+                ==> Utilizando lambda= 0.8 //Confirmado com Scilab
+                
+                // Primeira Iteração
+                x1= (b1-a12*x2)/a11= 8
+                x1= lambda*x1+(1-lambda)*0= 6.4
+                
+                x2= (b2-a21*x1)/a22= 2.2666667
+                x2= lambda*x2+(1-lambda)*0= 1.8133333
+                
+                // Segunda Iteração
+                x1= (b1-a12*x2)/a11= 4.3733333
+                x1= lambda*x1+(1-lambda)*6.4= 4.7786667
+                
+                x2= (b2-a21*x1)/a22= 1.1857778
+                x2= lambda*x2+(1-lambda)*1.8133333= 1.3112889
+                
+                // Terceira Iteração
+                x1= (b1-a12*x2)/a11= 5.3774222
+                x1= lambda*x1+(1-lambda)*4.7786667= 5.2576711
+                
+                x2= (b2-a21*x1)/a22= 1.5051141
+                x2= lambda*x2+(1-lambda)*1.3112889= 1.4663490
+                
+                Analisando como o sistema se comporta sem relaxamento, é possível perceber que ele ocila,
+            assim sabemos que para converjir devemos amortecer as ocilações. Isto é feito com um valor de
+            lambda `x` tal que 0<x<1.
