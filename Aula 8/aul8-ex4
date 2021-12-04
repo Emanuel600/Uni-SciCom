@@ -1,0 +1,17 @@
+        Definindo:
+        - A= [3 -3 -3 ; 4 7 -4 ; 4 -4 10]
+        - b= [7 ; -20 ; 70]
+        
+        Chamando `[x,iter]=gauss_seidel(A,b,1,1e-5)`:
+        - x1= 3.9999999
+        - x2=-2.6666667
+        - x3= 4.3333334
+        - iter= 34
+        
+        Chamando `[x,iter]=gauss_seidel(A,b,0.93,1e-5)`:
+        - x1= 4.0000000
+        - x2=-2.6666666
+        - x3= 4.3333333
+        - iter= 20
+        
+        Como o sistema converjiu mais rápido com amortecimento, podemos inferir que ele normalmente ocila
