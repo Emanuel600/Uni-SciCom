@@ -1,0 +1,16 @@
+        Definindo:
+        - A= [0.8 -0.4 0 ; -0.4 0.8 -0.4 ; 0 -0.4 0.8]
+        - b= [41 ; 25 ; 105]
+        
+        Chamando gauss_seidel(A, b, 1, 1e-5):
+        - x1= 173.74999
+        - x2= 244.99999 // 25 Iterações
+        - x3= 253.74999
+        
+        Chamando gauss_seidel(A, b, 1.2, 1e-5):
+        - x1= 173.74999
+        - x2= 245.00000 // 12 Iterações
+        - x3= 253.75000
+        
+        Comparando o número de iterações, temos que utilizando 1<lambda<2
+    o sistema converge muito mais rapidamente.
