@@ -36,7 +36,7 @@
         Calculando o erro, temos erro= 3.3549793 // Como erro>1, continuamos
         
         var_prev=var_nov
-          |    1          2   |    |4.441D-16|
+          |    1          2  |     |4.441D-16|
         A=|9.0421558 0.592974| e b=|0.0012863|, com r=A\b temos r=[0.0001471 ; -0.0000735]
         
         Fazendo var_nov=var_prev-r temos var_nov=[1.5068789 ; 0.2965606]
