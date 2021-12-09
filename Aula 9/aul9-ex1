@@ -17,36 +17,28 @@
         
         Assim calculamos o erro:
         
-        erro= 100*max (abs( (var_nov-var_prev)./var_nov ))= 47.159091 // Como erro>1, continuamos
+        erro= 100*max (abs( (var_nov-var_prev)./var_nov ))= 488.23529 // Como erro>1, continuamos
         
         var_prev=var_nov
-          |  1     2 |     |    0    |
+          |  1     2 |     |4.441D-16|
         A=|10.56 0.34| e b=|2.4217000|, com r=A\b temos r=[0.2330799 ; -0.1165399]
         
         Fazendo var_nov=var_prev-r temos var_nov=[1.5269201 ; 0.2865399] como nossas próximas estimativas
         
-        Calculando o erro, temos erro= 15.264707 // Como erro>1, continuamos
+        Calculando o erro, temos erro= 40.671448 // Como erro>1, continuamos
         
         var_prev=var_nov
-          |    1          2   |     |    0    |
-        A=|9.1615207 0.5730799| e b=|0.1765603|, com r=A\b temos r=[0.0198942 ; -0.0099471]
+          |    1          2   |     |-4.441D-16|
+        A=|9.1615207 0.5730799| e b=|0.1765603 |, com r=A\b temos r=[0.0198942 ; -0.0099471]
         
         Fazendo var_nov=var_prev-r temos var_nov=[1.5070260 ; 0.2964870]
         
-        Calculando o erro, temos erro= 1.3200938 // Como erro>1, continuamos
+        Calculando o erro, temos erro= 3.3549793 // Como erro>1, continuamos
         
         var_prev=var_nov
-          |     1         2   |     |    0    |
-        A=|9.1615207 0.5730799| e b=|0.1765603|, com r=A\b temos r=[0.0198942 ; -0.0099471]
+          |    1          2   |    |4.441D-16|
+        A=|9.0421558 0.592974| e b=|0.0012863|, com r=A\b temos r=[0.0001471 ; -0.0000735]
         
-        Fazendo var_nov=var_prev-r temos var_nov=[1.4871318 ; 0.3064341]
+        Fazendo var_nov=var_prev-r temos var_nov=[1.5068789 ; 0.2965606]
         
-        Calculando o erro, temos erro= 1.3377534 // Como erro>1, continuamos (aumentou)
-        
-        var_prev=var_nov
-          |     1         2   |     |    0    |
-        A=|9.1615207 0.5730799| e b=|0.1765603|, com r=A\b temos r=[0.0198942 ; -0.0099471]
-        
-        Fazendo var_nov=var_prev-r temos var_nov=[1.4672376 ; 0.3163812]
-        
-        Calculando o erro, temos erro= 1.3377534 // Como erro>1, continuamos (aumentou)
+        Calculando o erro, temos erro= 0.0247969 // Como erro<1, já está dentro do especificado
