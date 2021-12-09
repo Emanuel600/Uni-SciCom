@@ -1,0 +1,52 @@
+        Temos o sistema:
+        
+        1x+2y =2.1
+        3x²+y²=6.9
+        
+        Temos então as matrizes:
+        
+          |1  2 |     |1x+ 2y-2.1|
+        J=|6x 2x| , f=|3x²+y²-6.9|
+        
+        Utilizando x=1 e y=1:
+          
+          |1 2|     | 0.9|
+        A=|6 2| e b=|-2.9|, com r=A\b temos [-0.7600000 ; 0.83] como vetor solução
+        
+        Fazendo var_prev=[1 ; 1] e var_nov=var_prev-r temos var_nov=[1.7600000 ; 0.1700000] como nossas próximas estimativas
+        
+        Assim calculamos o erro:
+        
+        erro= 100*max (abs( (var_nov-var_prev)./var_nov ))= 47.159091 // Como erro>1, continuamos
+        
+        var_prev=var_nov
+          |  1     2 |     |    0    |
+        A=|10.56 0.34| e b=|2.4217000|, com r=A\b temos r=[0.2330799 ; -0.1165399]
+        
+        Fazendo var_nov=var_prev-r temos var_nov=[1.5269201 ; 0.2865399] como nossas próximas estimativas
+        
+        Calculando o erro, temos erro= 15.264707 // Como erro>1, continuamos
+        
+        var_prev=var_nov
+          |    1          2   |     |    0    |
+        A=|9.1615207 0.5730799| e b=|0.1765603|, com r=A\b temos r=[0.0198942 ; -0.0099471]
+        
+        Fazendo var_nov=var_prev-r temos var_nov=[1.5070260 ; 0.2964870]
+        
+        Calculando o erro, temos erro= 1.3200938 // Como erro>1, continuamos
+        
+        var_prev=var_nov
+          |     1         2   |     |    0    |
+        A=|9.1615207 0.5730799| e b=|0.1765603|, com r=A\b temos r=[0.0198942 ; -0.0099471]
+        
+        Fazendo var_nov=var_prev-r temos var_nov=[1.4871318 ; 0.3064341]
+        
+        Calculando o erro, temos erro= 1.3377534 // Como erro>1, continuamos (aumentou)
+        
+        var_prev=var_nov
+          |     1         2   |     |    0    |
+        A=|9.1615207 0.5730799| e b=|0.1765603|, com r=A\b temos r=[0.0198942 ; -0.0099471]
+        
+        Fazendo var_nov=var_prev-r temos var_nov=[1.4672376 ; 0.3163812]
+        
+        Calculando o erro, temos erro= 1.3377534 // Como erro>1, continuamos (aumentou)
