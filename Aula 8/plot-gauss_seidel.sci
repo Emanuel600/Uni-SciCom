@@ -1,3 +1,4 @@
+// Função alterada para mostrar gráfico
 function [x,iter] = gauss_seidel(A,b,lam,es,maxi)
     // Gauss-Seidel 
     // function x = gauss_seidel(A, b,lam,es,maxi)
