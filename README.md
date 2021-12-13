@@ -58,3 +58,10 @@ Uni - Computação Científica
 # => Aula 7
   - Exercício 1: Calcular norma e condicionamento de uma matriz (manualmene e com Scilab)
   - Exercício 2: Calcular matriz inversa (com Scilab) e analisar o quanto a fonte indicada contribui para i2
+
+# => Aula 8
+  - Exercício 1: Resolver exercícios do PDF contendo a 8ª aula
+  - Exercício 2: Modificar a função `gauss_seidel` para imprimir um gráfico de x1 em função do número de iterações
+
+# => Aula 9
+  - Exercício 1: Resolver o último exercício do PDF e apresentar o gráfico do sistema de equações
