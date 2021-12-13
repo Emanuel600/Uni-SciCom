@@ -1,3 +1,4 @@
+// Função dada pelo professor
 function [x, iter]=gauss_seidel(A, b, lam, es, maxi)
     // onde x vetor solução
     // A é a matriz de coeficientes
