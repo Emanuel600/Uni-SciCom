@@ -42,6 +42,6 @@
   
 ========
     
-    Os testes próprios serão arquivados dentro de outro documento de texto, este serve apenas para o raciocínio por
+    Os testes próprios serão arquivados dentro de um outro documento de texto, este serve apenas para o raciocínio por
   trás do motivo da condução dos testes iniciais. Obviamente, além de testes feitos deliberadamente para "quebrar" os
   algoritmos, teremos testes em funções completamente normais somente para ver o algoritmo em ação sem interrupções.
