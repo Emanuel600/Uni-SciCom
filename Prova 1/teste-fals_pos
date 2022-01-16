@@ -1,0 +1,32 @@
+    Seguindo os testes feitos para o método da bisecção, temos:
+    
+    Para f(x)=3x-5:
+    """
+    A raiz da função entrada se encontra em x= 1.666666666666667;
+    Com um erro aproximado de 40%, utilizando 1 iterações
+    """
+    Houve um erro na aproximação do erro, isto se deve ao método de estimação e não
+  pode ser melhorado. Fora isso chegou ao resultado correto muito mais rapidamente e
+  com mais precisão.
+  
+    Para f(x)=x^2+x-12:
+    """
+    A raiz da função entrada se encontra em x= -3.999999952727657;
+    Com um erro aproximado de 1.654531866e-05%, utilizando 6 iterações
+    """
+    Em contraste com o que aconteceu com o método da bisecção, o erro foi própriamente
+  calculado, mas a precisão foi um pouco menor e precisou de mais iterações.
+  
+  Para f(x)=x^2: Como o erro anterior do programa fechar sem interagir com o usuário já
+foi corrigido, o programa exibe uma caixa de diálogo pedindo que o usuário entre um novo
+intervalo. O problema de não conseguir estimar a raiz ainda existe.
+
+    Para f(x)=sin(x*1e5):
+    """
+    A raiz da função entrada se encontra em x= -4.995069487547655;
+    Com um erro aproximado de 3.687549636e-06%, utilizando 11 iterações
+    """
+    O programa apresente um erro muito similar ao que aconteceu durante o teste da bisecção,
+  exibindo os mesmos problemas anteriores.
+  
+    Com isso, terminamos os testes do método.
