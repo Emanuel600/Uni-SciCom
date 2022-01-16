@@ -20,10 +20,10 @@
   estes casos a raíz se encontra em um ponto crítico (máximo e mínimo respectivamente) e portanto não possui
   pontos de sinais opostos que podem ser utilizados no método.
   
-    2) Para o segundo método, teremos os mesmo testes feitos para o primeiro além de utilizar uma característica
-  do método: a forma que a raiz é calculada. Como a raiz é calculada com uma divisão, podemos pegar uma função tal
-  que f(xu)=f(xl), resultando em uma divisão por 0. Funções quaisquer aparte, temos como alvo óbvio as funções
-  simétricas, podendo utilizar f(x)=x.^2 e [xu=-0.1 ; xl=0.1] como um dos testes.
+    2) Para o segundo método, teremos os mesmo testes feitos para o primeiro, o motivo disto é simples: a única
+  característica especial do método que pode ser explorada é que o cálcula da raiz utiliza uma divisão. O problema
+  em tentar explorar isso, é que só será dividido por zero caso f(xl)=f(xu) e nestes casos teremos que o programa
+  vai retornar que não existe raiz no intervalo dado (mesmo resultado da bisecção)
   
     3) Para o terceiro método, os testes anteriores são praticamente triviais. Mas ainda possui algumas fraquezas
   que podemos explorar: Notavelmente, temos funções tal que f'(x)=0 próximo a raíz. Isto torna funções que deveriam
