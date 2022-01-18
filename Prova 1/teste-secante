@@ -1,0 +1,45 @@
+    Para testar o método da secante, vamos primeiro aplicar os mesmos testes do método
+  Newton-Raphson e comparar os resultados:
+  
+    Para f(x)=3x-2, com dxi=1e-4:
+    """
+    A raiz da função entrada se encontra em x= 0.6666666666666667;
+    Com um erro aproximado de 2.020050793e-11%, utilizando 2 iterações
+    """
+    Convergiu com a mesma velocidade mas apresenta uma pequena perda de exatidão
+    
+    Para f(x)=x^3-2x^2-3x+23, com dxi=1e-4:
+    """
+    A raiz da função entrada se encontra em x= -2.589265607314591;
+    Com um erro aproximado de 2.507500285e-11%, utilizando 6 iterações
+    """
+    Chegou no mesmo resultado com a mesma velocidade
+    
+    Para f(x)=x^2, com dxi=1e-4 e x0=1e-16 (x0=0 não é mais permitido pelo programa):
+    """
+    divergiu com x=8.904D-32, f(x)=3.171D-62
+    Com um erro aproximado de 99.990001%, utilizando 50 iterações
+    """
+    A raiz chegou no resultado correto dentro do limite aceitável, mas como a raiz
+  não tinha muito o que melhorar (já estava certa com 15 dígitos de precisão), fazendo
+  com que o programa não conseguisse calcular o erro.
+  
+    Para f(x)=e^x-x-1 com dxi=1e-15 e x0=1e-16:
+    """
+    divergiu com x=Nan, f(x)=Nan
+    Com um erro aproximado de Nan%, utilizando 50 iterações
+    """
+    Isto provavelmente ocorreu porque os valores dxi e x0 foram tão pequenos que
+  a perturbação foi truncada para 0. Este problema só acontece em casos muito especiais,
+  então não seria um grande problema ao usuário
+  
+    Para f(x)=1/x-1e-5, com dxi=1e-5:
+    """
+    A raiz da função entrada se encontra em x= 99999.99999999999;
+    Com um erro aproximado de 1.455191523e-14%, utilizando 21 iterações
+    """
+    Foi um pouco menos exato que o método de Newton-Raphson mas convergiu com
+  a mesma velocidade.
+  
+    Como um dos testes já demonstrou como uma divisão por zero pode ocorrer, acho que este método
+  foi suficientemente explorado.
