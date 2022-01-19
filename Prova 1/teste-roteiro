@@ -7,11 +7,7 @@
     4) Secante (Modificado)
     
     1) Para o primeiro método, é interessante verificar para intervalos muito curtos, raízes múltiplas
-  dentro de um pequeno intervalo e raízes que não "cruzam o eixo 'x'". É possível criar estes cenários
-  com facilidade, para o primeiro podemos utilizar uma função qualquer e fazer `xl=xu+1e-16`. Isto coloca
-  o intervalo no limite do que uma double pode oferecer em termos de precisão. Também podemos adiconar
-  uma quantia tão pequena que não é possível com doubles, como `xl=xu+1e-20`, para ver se a raiz pode
-  ser calculada.
+  dentro de um pequeno intervalo e raízes que não "cruzam o eixo 'x'".
     Para raízes múltiplas em um pequeno intervalo, é possível usar uma função seno modificada para ter uma
   frequência muito alta. Aqui temos duas possibilidades: 1) utilisar o espaçamento entre os pontos do gráfico
   para "esconder" uma raiz do usuário em um ponto "pulado" e 2) fazer com que a função própria simplesmente
@@ -26,19 +22,14 @@
   vai retornar que não existe raiz no intervalo dado (mesmo resultado da bisecção)
   
     3) Para o terceiro método, os testes anteriores são praticamente triviais. Mas ainda possui algumas fraquezas
-  que podemos explorar: Notavelmente, temos funções tal que f'(x)=0 próximo a raíz. Isto torna funções que deveriam
-  ser triviais para um humano um pouco difíceis para este método, uma vez que qualquer função polinomial que não
-  possui um termo independente tem que f(0)=0.
+  que podemos explorar: Notavelmente, temos funções tal que f'(x)=0 próximo a raíz.
     Dentro deste método também temos que qualquer função com vários locais com f'(x) próximo ou igual a zero podem
   fazer com que a raiz não possa ser determinada, mesmo que longe da raíz própria. Assim temos as duas fraquezas que
-  devem ser exploradas.
+  podem ser exploradas.
   
-    4) Para o quarto método, temos os mesmo testes feito no terceiro. Fora isso, temos perturbações de ordens
-  extremamente pequenas, como dxi=1e-16 ou dxi= 2.2250738585072014e-308 (uma vez que o prgrama já tem proteção contra
-  dxi=0).
-    Dentro deste método temos mais um ponto fraco: x=0. Como a perturbação é calculada como `x*dxi`, se x=0 temos
-  que a perturbação p também será igual a zero. Isto não só faz com que a raiz não convirja, mas também causa uma
-  divisão por zero. Isto terá que ser modificado na versão final do código.
+    4) Para o quarto método, temos os mesmo testes feitos no terceiro. Mas temos dentro deste método mais um ponto
+  fraco: x=0. Como a perturbação é calculada como `x*dxi`, se tanto 'x' quanto 'dxi' forem pequenos, podemos fazer
+  com que a perturbação seja truncada tal que 'p=0'
   
 ========
     
