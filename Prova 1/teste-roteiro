@@ -17,7 +17,7 @@
   pontos de sinais opostos que podem ser utilizados no método.
   
     2) Para o segundo método, teremos os mesmo testes feitos para o primeiro, o motivo disto é simples: a única
-  característica especial do método que pode ser explorada é que o cálcula da raiz utiliza uma divisão. O problema
+  característica especial do método que pode ser explorada é que o cálculo da raiz utiliza uma divisão. O problema
   em tentar explorar isso, é que só será dividido por zero caso f(xl)=f(xu) e nestes casos teremos que o programa
   vai retornar que não existe raiz no intervalo dado (mesmo resultado da bisecção)
   
@@ -28,11 +28,12 @@
   podem ser exploradas.
   
     4) Para o quarto método, temos os mesmo testes feitos no terceiro. Mas temos dentro deste método mais um ponto
-  fraco: x=0. Como a perturbação é calculada como `x*dxi`, se tanto 'x' quanto 'dxi' forem pequenos, podemos fazer
-  com que a perturbação seja truncada tal que 'p=0'
+  fraco. Como a perturbação é calculada como `x*dxi`, se tanto 'x' quanto 'dxi' forem pequenos, podemos fazer com
+  que a perturbação seja truncada tal que 'p=0'
   
 ========
     
     Os testes próprios serão arquivados dentro de seus próprios documentos de texto, este serve apenas para o raciocínio
   por trás do motivo da condução dos testes iniciais. Obviamente, além de testes feitos deliberadamente para "quebrar" os
-  algoritmos, serão feitos testes em funções completamente normais para ver o algoritmo em ação sem interrupções.
+  algoritmos, serão feitos testes em funções completamente normais para ver o algoritmo em ação sem interrupções. Finalmente,
+  será feito um último teste para ver como o algoritmo se comporta com uma função real.
