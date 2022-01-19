@@ -1,6 +1,10 @@
     Será feito um último teste com todos os algoritmos para ver como
   o programa se comporta em uma situação mais realista.
   
+    Obs: Após algumas alterações no programa, entrar com a função e sua
+  derivada está muito mais fácil. Agora não é necessário incluir '.' antes
+  de algumas operações, o programa passou a fazer isso automáticamente.
+  
     Para a análise, será modelado um cenário aonde se deve calcular
   qual o coeficiente de arraste de um saltador de bungee jump, se a sua
   massa é 75kg e considerando a gravidade como sendo igual a 9.81m/s^2 e
