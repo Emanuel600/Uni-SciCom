@@ -33,7 +33,7 @@
   sqrt(gc/m))/(2m*sqrt(gc/m)).
     Simplificando, temos que deri=-(m*sqrt(gc/m)*tanh(t*sqrt(gc/m))-gtc*
   sech^2(t*sqrt(gc/m)))/2c^2.
-    O programa retorna:
+    O programa retorna com "x0=3.5":
     """
     divergiu com x=3.4298226, f(x)=-0.3562246
     Com um erro aproximado de 0.03512017817%, utilizando 50 iterações
@@ -52,6 +52,6 @@
     A raiz da função entrada se encontra em x= 3.269999999943054;
     Com um erro aproximado de 6.885256891e-09%, utilizando 4 iterações
     """
-    Um bom resultado, dentre todos os métodos testados, foi a que apresentou o
-  resultado com menor erro e que conergiu com maior velocidadealém de necessitar
+    Um bom resultado, dentre todos os métodos testados, foi o que apresentou o
+  resultado com menor erro e que convergiu com maior velocidade, além de necessitar
   menos esforço que qualquer outro método.
