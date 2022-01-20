@@ -10,7 +10,7 @@
     Temos que o erro real da operação é 0%.
     
     Para uma função um pouco mais realistica e que tenha uma chance maior de gerar erros
-  podemos redefinir "fun=x.^3-2*x.^2-3*x+23" com "x0=-3.5" e "deri= 3*x^2-4*x-3" retorna:
+  podemos redefinir "fun=x.^3-2*x.^2-3*x+23" com "x0=-3.5" e "deri= 3*x^2-4*x-3" que retorna:
     """
     A raiz da função entrada se encontra em x= -2.589265607314591;
     Com um erro aproximado de 0%, utilizando 6 iterações
