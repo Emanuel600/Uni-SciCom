@@ -44,9 +44,9 @@
     - xl=-0.5 ; xu=0.5
     
     Resultado: O programa nem sequer abriu uma caixa de diálogo com o usuário. Isto deve ser modificado para
-  melhorar a interface com o usuário.
+  melhorar a interface com o usuário. !Já foi concertado!
   
-    Utilizando agora uma função seno modificada: f(x)=sin(x*1e5) e definindo:
+    Utilizando agora uma função seno modificada f(x)=sin(x*1e5) e definindo:
     - a=-5
     - b= 5
     - es=1e-3
