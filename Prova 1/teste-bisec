@@ -1,0 +1,72 @@
+    Este documento contém os testes feitos para verificar a precisão e o funcionamento do programa
+    
+    Para testar o método da bisecção, primeiro foi utilizado uma função linear comum. Nada que deveria
+  causar algum problema, isto serve para verificar que tudo está funcionando sem problemas.
+  
+    f(x)=3x-5, podemos calcular a raiz como 3x=5, x=5/3=~1.667.
+    
+    Definindo:
+    - a=-5
+    - b= 5
+    - es=1e-4
+    
+    - funcao=3*x-5
+    
+    Selecionando o método da bisecção e definindo xl=1 e xu=2 o programa retorna:
+    """
+    A raiz da função entrada se encontra em x= 1.666666984558105;
+    Com um erro aproximado de 5.722044807e-05%, utilizando 20 iterações
+    """
+    
+    A raiz conforma com o cálculo preliminar. Calculando o erro com ([5/3]-raiz)/(5/3), temos
+  que o erro real é aproximadamente 1.907e-5%, que está dentro do parâmetro dado.
+  
+    Para o próximo teste ainda não será utilizada uma função especial. Uma função quadrática com as
+  raízes (3, -4) será utilizada: f(x)=(x-3)(x+4)=x^2+x-12. Entrando a função no programa com os mesmos
+  parâmetros de antes e utilizando xl=-4.5 e xu=-3.5, a função retorna:
+  
+    """
+    A raiz da função entrada se encontra em x= -4;
+    Com um erro aproximado de 12.5%, utilizando 1 iterações
+    """
+    
+    Apesar da raiz ser exata, o programa não conseguiu calcular o erro propriamente. No momento não consigo
+  ver um bom método de consertar o problema.
+  
+    Agora para funções com o propósito explícito de causar erros no algoritmo:
+    
+    Começando com f(x)=x^2, que possui apenas uma raiz sem cruzar o eixo x. Definindo:
+    - a=-5
+    - b= 5
+    - es=1e-10
+    
+    - funcao=x.^2
+    - xl=-0.5 ; xu=0.5
+    
+    Resultado: O programa nem sequer abriu uma caixa de diálogo com o usuário. Isto deve ser modificado para
+  melhorar a interface com o usuário. !Já foi concertado!
+  
+    Utilizando agora uma função seno modificada f(x)=sin(x*1e5) e definindo:
+    - a=-5
+    - b= 5
+    - es=1e-3
+    
+    - funcao=sin(x*1e5)
+    - xl= -5 ; xu= -4.9
+    
+    Resultado: Apesar da resolução do gráfico ser ruim, é possível identificar pelo menos dois intervalos próximos.
+  O programa retorna:
+  """
+  A raiz da função entrada se encontra em x= -4.999072265625;
+  Com um erro aproximado de 0.0009767437318%, utilizando 11 iterações
+  """
+    Calculando uma resolução para o problema, temos que x*1e5=0 ou x*1e5=pi*k. Utilizando a segunda, temos que x=pi/1e5
+  ou x=pi*1e-5*k (sendo k um número inteiro), fazendo k=1e5*n (n sendo outro número inteiro) temos que x=pi*n. Com isso
+  temos que n=-2 ou n=-1 são os resultados mais próximos. Ao calcular sin(raiz), o scilab retorna 0.9591870 como resultado.
+  
+    Considerando que o erro permitido era igual a 1e-3, o resultado diverge demais. Definindo "r=2*%pi", "x=-4.999072265625" e
+  calculando erro=100*abs( (r-x)/r ), temos que o erro real está em torno de 20.44%. Este tipo de erro parece estar relacionado
+  com o método utilizado para estimar o erro dentro da função, por este motivo determino este erro do programa como incorrigível.
+  
+    A versão final do programa provavelmente terá consertado tudo que possível, portanto os resultados neste documento podem ser
+  impossíveis de reproduzir com 100% de fidelidade na última versão do programa

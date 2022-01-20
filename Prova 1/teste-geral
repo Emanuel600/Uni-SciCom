@@ -1,0 +1,57 @@
+    Será feito um último teste com todos os algoritmos para ver como
+  o programa se comporta em uma situação mais realista.
+  
+    Obs: Após algumas alterações no programa, entrar com a função e sua
+  derivada está muito mais fácil. Agora não é necessário incluir '.' antes
+  de algumas operações, o programa passou a fazer isso automáticamente.
+  
+    Para a análise, será modelado um cenário aonde se deve calcular
+  qual o coeficiente de arraste de um saltador de bungee jump, se a sua
+  massa é 75kg e considerando a gravidade como sendo igual a 9.81m/s^2 e
+  a velocidade de queda no instante t=20s igual a 15m/s. Utilizando a
+  fórmula v(t)=sqrt(gm/c)*tanh(sqrt(gc/m)*t), com um erro de 1e-5:
+    Como o coeficiente c não pode ser negativo, definimos "a=0", "b=10".
+  Para bisecção, vamos escolher "xl=3" e "xu=3.5". Isto resulta em:
+    """
+    A raiz da função entrada se encontra em x= 3.270000219345093;
+    Com um erro aproximado de 7.291087557e-06%, utilizando 21 iterações
+    """
+    A raiz parece ter sido calculada corretamente, mas houve complicações
+  ao escrever a função.
+  
+    Utilizando os mesmos parâmetros com falsa posição, temos:
+    """
+    A raiz da função entrada se encontra em x= 3.270000013403996;
+    Com um erro aproximado de 6.188338854e-06%, utilizando 6 iterações
+    """
+    A raiz convergiu mais rapidamente e com maior precisão.
+    
+    Para o método de Newton-Rapshon, a derivada terá que ser calculada,
+  considerando a complexidade da função esta está garantida ser difícil de
+  calcular. Temos que para d/dx(u*v)=du/dc*v+dv/dc*u, com u=sqrt(gm/c) e
+  du/dc=-gm/(2*sqrt(gm/c)*c^2) e v=tanh(sqrt(gc/m)*t) com dv/dc=sech^2(t*
+  sqrt(gc/m))/(2m*sqrt(gc/m)).
+    Simplificando, temos que deri=-(m*sqrt(gc/m)*tanh(t*sqrt(gc/m))-gtc*
+  sech^2(t*sqrt(gc/m)))/2c^2.
+    O programa retorna com "x0=3.5":
+    """
+    divergiu com x=3.4298226, f(x)=-0.3562246
+    Com um erro aproximado de 0.03512017817%, utilizando 50 iterações
+    """
+    Um resultado que realmente não vale o esforço. Redefinido "x0=3.3" temos:
+    """
+    divergiu com x=3.2895417, f(x)=-0.0450048
+    Com um erro aproximado de 0.00513917915%, utilizando 50 iterações
+    """
+    O motivo do programa não conseguir calcular a raiz pode ser qualquer combinação
+  de dois fatores: 1) houve um erro no cálculo da derivada; e 2) como f'(x) está
+  muito próxima de 0 na área, diverge com facilidade.
+  
+    Finalmente, temos o método da secante com dxi=1e-6:
+    """
+    A raiz da função entrada se encontra em x= 3.269999999943054;
+    Com um erro aproximado de 6.885256891e-09%, utilizando 4 iterações
+    """
+    Um bom resultado, dentre todos os métodos testados, foi o que apresentou o
+  resultado com menor erro e que convergiu com maior velocidade, além de necessitar
+  menos esforço que qualquer outro método.

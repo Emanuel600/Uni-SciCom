@@ -1,0 +1,53 @@
+    Para testar o método de Newton-Raphson, seria bom começar com funções normais
+  que não deveriam causar grandes problemas.
+  
+    Um tipo de função que este método é particularmente bom em encontrar raízes são
+  as lineares. Definindo "a=-5", "b=5", "es=1e-10", "fun=3*x-2", "deri=3" e "x0=0.75":
+    """
+    A raiz da função entrada se encontra em x= 0.6666666666666666;
+    Com um erro aproximado de 0%, utilizando 2 iterações
+    """
+    Temos que o erro real da operação é 0%.
+    
+    Para uma função um pouco mais realistica e que tenha uma chance maior de gerar erros
+  podemos redefinir "fun=x.^3-2*x.^2-3*x+23" com "x0=-3.5" e "deri= 3*x^2-4*x-3" que retorna:
+    """
+    A raiz da função entrada se encontra em x= -2.589265607314591;
+    Com um erro aproximado de 0%, utilizando 6 iterações
+    """
+    O programa não parece ter problemas em encontrar as raízes destas funções, mas
+  uma função relativamente trivial como "fun=x.^2" pode nos dar problemas. Utilizando
+  as mesmas variáveis de antes mas definindo "x0=0" temos:
+    """
+    Derivada igual a zero, o processo divergiu com x=0, f(x)=0
+    Com um erro aproximado de 100%, utilizando 0 iterações
+    """
+    Neste exemplo o problema não foi de grande escala, uma vez que a raiz ainda foi determinada.
+  Mas isto pode acontecer com qualquer função tal que f'(x)=0 próximo a raiz. Isto não é comum em
+  polinomiais, mas não quer dizer que seja impossível. Como exemplo podemos redefinir "fun=%e.^x-x-1"
+  com "deri=%e.^x-1" e "x0=0.01" (já que igual a zero não é possível) que retorna:
+    """
+    A raiz da função entrada se encontra em x= 8.540526104918308e-09;
+    Com um erro aproximado de 0%, utilizando 21 iterações
+    """
+    A raiz está próxima do resultado real, mas necessitou um grande número de iterações.
+    
+    Para o último teste, redefinimos "fun=1./x-1e-5" com "deri=-1./x.^2" e "x0=5" que retorna:
+    """
+    A raiz da função entrada se encontra em x= 100000;
+    Com um erro aproximado de 0%, utilizando 21 iterações
+    """
+    O resultado foi melhor que o esperado.
+    
+    Finalmente, temos que "fun=sin(x)-%pi/4" com "deri=cos(x)" e "x0=-4" retorna:
+    """
+    A raiz da função entrada se encontra em x= -4.044931764356306;
+    Com um erro aproximado de 1.234028906e-11%, utilizando 4 iterações
+    """
+    Convergiu com facilidade na raiz. Mas temos outras possibilidades: "x0=0" parece que
+  pode levar a uma situação em que o programa não pode convergir ou vai precisar de muitas iterações.
+    """
+    A raiz da função entrada se encontra em x= 0.9033391107665129;
+    Com um erro aproximado de 0%, utilizando 6 iterações
+    """
+    O programa convergiu rapidamente e sem problemas. Com isso finalizamos os testes.
