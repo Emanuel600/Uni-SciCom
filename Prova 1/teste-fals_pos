@@ -26,7 +26,7 @@ intervalo. O problema de não conseguir estimar a raiz ainda existe.
     A raiz da função entrada se encontra em x= -4.995069487547655;
     Com um erro aproximado de 3.687549636e-06%, utilizando 11 iterações
     """
-    O programa apresente um erro muito similar ao que aconteceu durante o teste da bisecção,
+    O programa apresenta um erro muito similar ao que aconteceu durante o teste da bisecção,
   exibindo os mesmos problemas anteriores.
   
     Com isso, terminamos os testes do método.
