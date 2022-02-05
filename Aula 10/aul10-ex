@@ -1,0 +1,19 @@
+    == Parte Manual ==
+    
+    == Solução por Scilab ==
+    fun='2*ya*[(92-ya)/92]'
+    
+    [y,t]=rk4(fun, 0, 2, 1, 10)
+    """
+    y=
+        10.
+        42.798911
+        79.092795
+    t=
+        0.
+        1.
+        2.
+    """
+    == Soluão Analítica ==
+    
+    == Erro Verdadeiro ==
