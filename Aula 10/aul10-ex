@@ -1,4 +1,6 @@
     == Parte Manual ==
+    y'=2*y*[(92-y)/92]
+    k1=f(0,10)=0
     
     == Solução por Scilab ==
     fun='2*ya*[(92-ya)/92]'
