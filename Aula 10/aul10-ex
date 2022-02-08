@@ -1,0 +1,52 @@
+    == Parte Manual ==
+    temos a equação "y'=2*y*[(92-y)/92]"
+    
+    em t=0, y=y0=10. Agora devemos calcular para t=1
+    
+    definindo no scilab:
+      function yn= calc_k(y)
+        yn= 2*y*[(92-y)/92]
+      end
+
+    assim podemos calcular o valor de k
+    
+    k1=f(0,10)=calc_k(10)=17.826087
+    k2=f(0.5,10+(17.826087)/2)=calc_k(18.913044)=30.049930
+    k3=f(0.5,10+(30.049930)/2)=calc_k(25.024965)=36.435824
+    k4=f(1, 10+36.435824) =calc_k(46.435824)=45.995871
+    
+    pond=(k1+2*k2+2*k3+k4)/6=32.798911
+    
+    temos assim que em t=1 y=10+pond=42.798911
+    
+    para t=2, temos que:
+    k1=f(0,42.798911)=calc_k(42.798911)=45.777240
+    k2=f(0.5,y+(45.777240)/2)=calc_k(65.687531)=37.573938
+    k3=f(0.5,y+(37.573938)/2)=calc_k(61.585880)=40.719138
+    k4=f(1, y+40.719138) =calc_k(83.518049)=15.399913
+    
+    pond=(k1+2*k2+2*k3+k4)/6=36.293884
+    
+    temos assim que em t=2 y=y+pond=79.092795
+    
+    == Solução por Scilab ==
+    definindo: fun='2*ya*[(92-ya)/92]'
+    
+    chamando: [y,t]=rk4(fun, 0, 2, 1, 10)
+    
+    Temos:
+      """
+      y=
+          10.
+          42.798911
+          79.092795
+      t=
+          0.
+          1.
+          2.
+      """
+    == Soluão Analítica ==
+    Não sei como resolver...
+    
+    == Erro Verdadeiro ==
+    Como não consigo resolver, esta parte fica incompleta
