@@ -1,4 +1,5 @@
-function [alfa, betha, r]=reglinear(x, y, e, m)
+// Função dada pelo professor para criação de modelos de regressão linear, com uma pequena correção de um erro de digitação
+function [alfa, beta, r]=reglinear(x, y, e, m)
     /* x vetor com os pontos da variável independente
     y vetor com os pontos da variávei dependente
     e: 'r' - reta, 'e' - exp, 'p' - potencia, 's' - saturação
