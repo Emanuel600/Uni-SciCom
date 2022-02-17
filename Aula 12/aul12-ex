@@ -14,3 +14,14 @@
     
     Assim temos que o polinômio quadrático é "y=a(1)+a(2)*x+a(3)*x^2":
     Para x=2, temos y=0.5658443 com um erro de 18.365917%
+
+    => Polinômio de Lagrange de graus 1 e 2 para os dados: T=[0 20 40] e r=[3.85 0.800 0.212] para T=15
+    Declarando: // 1º grau
+    x1=0 ; x2=20 ; L1=(15-20)/(0-20) ; L2=(15-0)/(20-0) ; fx1=3.85 ; fx2=0.800
+    Fazendo fx=L1*fx1+L2*fx2:
+    fx=1.5625
+    
+    Declarando: // 2º grau
+    x3=40 ; L1=L1*(15-40)/(0-40) ; L2=L2*(15-40)/(20-40) ; L3=[(15-0)*(15-20)]/[(40-0)*(40-20)] ; fx3=0.212
+    Fazendo fx=L1*fx1+L2*fx2+L3*fx3:
+    fx=1.3316875
