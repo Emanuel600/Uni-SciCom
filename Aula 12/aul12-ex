@@ -1,34 +1,22 @@
     => polinômio - grau 2 -> ln(2) | Utilizando ln(1)=0, ln(4)=1.386294 e ln(6)=1.791759
     Para interpolar o valor f(x)=ln(x) em x=2 com um polinômio de segundo grau, devem ser
-  criadas duas matrizes ('A' e 'b') que serão utilizadas para  o sistema de equações.
-  
-    Assim, temos que para um polinômio de grau 2:
-    |b1x1^2 b2x1 b3|      |x1^2 x1 1|     |b1|
-    |b1x2^2 b2x2 b3| => A=|x2^2 x2 1| , b=|b2|
-    |b1x3^2 b2x3 b3|      |x3^2 x3 1|     |b3|
+  calculados os termos da equação f(x)=b1+b2(x-x1)+b3(x-x1)(x-x2).
     
     Utilizando o scilab:
     
     Declarando:
     x1=1 ; x2=4 ; x3=6 // Pontos conhecidos
-    b1=0 ; b2=1.386294 ; b3=1.791759 // f(x) no ponto específico
-    A=[x1^2 x1 1 ; x2^2 x2 1 ; x3^2 x3 1]
-    b=[b1 ; b2 ; b3]
+    fx1=0 ; fx2=1.386294 ; fx3=1.791759 // f(x) no ponto específico
+    b1=fx1 ; b2=(fx2-fx1)/(x2-x1) ; part1=(fx3-fx2)/(x3-x2) ; part2=(fx2-fx1)/(x2-x1)
+    b3=(part1-part2)/(x3-x1)
     
-    Verificando o condicionamento de A, temos que cond(A)=93.910690. Calculando log(cond(A)) para
-  verificar os dígitos de precisão, recebemos 4.5423442 como resultado. Isto significa que cerca
-  de 5 dígitos da solução serão questionáveis.
+    Isto resulta em:
+    b1= 0
+    b2= 0.4620980
+    b3=-0.0518731
     
-    Utilizando a=A\b: // Resulta em "a, b e c" da função f(x)=a+bx+cx^2
-    a(3)=-0.6695906 // a
-    a(2)= 0.7214637 // b
-    a(1)=-0.0518731 // c
-    
-    Acontando para os dígitos dúbeis, temos:
-    a(3)=-0.67 ; a(2)= 0.72 ; a(1)=-0.05
-    
-    Assim temos que o polinômio quadrático é "y=a(3)+a(2)*x+a(1)*x^2":
-    Para x=2, temos y=0.5700000 com um erro de 17.766383% (erro=100*abs(log(2)-y)/log(2))
+    Sendo que o polinômio quadrático é "y=b1+b2*(x-x1)+b3*(x-x1)*(x-x2)".
+    Para x=2, temos y=0.5658442 com um erro de 18.365938% (erro=100*abs(log(2)-y)/log(2))
 
     => Polinômio de Lagrange de graus 1 e 2 para os dados: T=[0 20 40] e r=[3.85 0.800 0.212] para T=15
     Declarando: // 1º grau
