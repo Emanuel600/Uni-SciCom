@@ -1,0 +1,38 @@
+    == Exercício 1 => Newton ==
+    
+    Para interpolar o valor f(x)=ln(x) em x=2 com um polinômio de segundo grau, devem ser
+  calculados os termos da equação f(x)=b1+b2(x-x1)+b3(x-x1)(x-x2).
+    
+    Utilizando o scilab:
+    
+    Declarando:
+    x1=1 ; x2=4 ; x3=6 // Pontos conhecidos
+    fx1=0 ; fx2=1.386294 ; fx3=1.791759 // f(x) no ponto específico [fxn=f(xn)]
+    b1=fx1 ; b2=(fx2-fx1)/(x2-x1) ; part1=(fx3-fx2)/(x3-x2) ; part2=(fx2-fx1)/(x2-x1)
+    b3=(part1-part2)/(x3-x1)
+    
+    Isto resulta em:
+    b1= 0
+    b2= 0.4620980
+    b3=-0.0518731
+    
+    Sendo que o polinômio quadrático é "y=b1+b2*(x-x1)+b3*(x-x1)*(x-x2)".
+    Para x=2, temos y=0.5658442 com um erro de 18.365938% (erro=100*abs(log(2)-y)/log(2))
+
+    == Exercício 2 => Lagrange ==
+    
+    Para intepolar o valor de f(x)=ro, devemos utilizar os pontos conhecidos de forma que T=x.
+    
+    Declarando: // 1º grau
+    x1=0 ; x2=20 // Pontos conhecidos necessários para criar um polinômio de grau 1
+    L1=(15-20)/(0-20) ; L2=(15-0)/(20-0) // Coeficientes de Lagrange
+    fx1=3.85 ; fx2=0.800 // f(x) nos pontos conhecidos
+    Fazendo fx=L1*fx1+L2*fx2:
+    fx=1.5625 // Densidade de óleo de motor em x=T=15
+    
+    Declarando: // 2º grau
+    x3=40 // Ponto adicional necessário para converter o polinômio de grau 1 em um polinômio de grau 2
+    L1=L1*(15-40)/(0-40) ; L2=L2*(15-40)/(20-40) ; L3=[(15-0)*(15-20)]/[(40-0)*(40-20)] // Coeficientes novos de Lagrange
+    fx3=0.212 // Valor de f(x) no ponto adicional
+    Fazendo fx=L1*fx1+L2*fx2+L3*fx3:
+    fx=1.3316875 // Densidade de óleo de motor em x=T=15
