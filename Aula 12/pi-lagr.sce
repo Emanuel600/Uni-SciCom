@@ -1,3 +1,4 @@
+// Função dada pelo professor
 function ye=pi_Lagr(x, y, xe)
     /* onde
     ye é o valor interpolado da variável dependente;
