@@ -1,3 +1,4 @@
+// Função fornecida pelo professor
 function [y, t]=rk4(fun, ti, tf, h, y0)
     // Res. de sist. EDs por RK4
     // function [y,t]=rk4(fun,ti,tf,h,y0)
