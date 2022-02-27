@@ -1,0 +1,29 @@
+    Tendo os vetores 'x' e 'y' da forma:
+    x=[3 4.5 7 9] ; y=[2.5 1 2.5 0.5]
+    
+    A partir deles, podemos criar o vetor 'h':
+    h=[ x(2)-x(1) x(3)-x(2) x(4)-x(3) ]
+    h=[ 1.5 2.5 2 ]
+    
+    Podemos então calcular o vetor ddf:
+    ddf=[ (y(2)-y(1))/h(1) (y(3)-y(2))/h(2) (y(4)-y(3))/h(3) ]
+    ddf=[ -1 0.6 -1 ]
+    
+    Criamos com estes as matrizes 'A' e 'f':
+    A=[ h(2) -(h(1)+h(2)) h(1) 0 ; 2*(h(1)+h(2)) h(2) 0 0 ; h(2) 2*(h(2)+h(3)) h(3) 0 ; h(2) -(h(1)+h(2)) h(1) 0 ]
+    f=[ 0 ; 3*(ddf(2)-ddf(1)) ; 3*(ddf(3)-ddf(2)) ; 0]
+    
+        |2.5  -4 1.5 0|     | 0.0|
+        |8.0 2.5 0.0 0|     |-4.8|
+    A=  |2.5 9.0 2.0 0|, f= | 4.8|
+        |2.5  -4 1.5 0|     | 0.0|
+        
+    Resolvendo as matrizes e armazenando o resultado em um vetor 'c':
+    c=A\f
+    c=[ 0.6920771 ; -0.2946467 ; -1.9391863 ; 0 ]
+    
+    Como o ponto se encontra entre x(3) e x(2), calculamos as constantes 'b' e 'd' no ponto como:
+    b= ddf(2) - (h(2)/3)*(2*c(2)+c(3)) ; d= (c(3)-c(2))/(3*h(2))
+    b= 2.7070664 ; d= -0.2192719
+    
+    Sendo k= 5-4.5= 0.5, temos que f(x)≈ y(2)+b*k+c(2)*k^2+d*k^3= 2.2524625
