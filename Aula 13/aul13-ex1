@@ -10,10 +10,18 @@
     ddf=[ 1.3333333   2.5  -3.6666667  -0.25 ]
     
     Assim temos as matrizes:
+    A=[2*(h(1)+h(2)) h(2) 0 ; h(2) 2*(h(2)+h(3)) h(3) ; 0 h(3) 2*(h(3)+h(4))]
+    f=[3*(ddf(2)-ddf(1)) ; 3*(ddf(3)-ddf(2)) ; 3*(ddf(4)-ddf(3))]
     
         |14  4  0|      | 3.5 |
     A=  | 4 14  3| e f= |-18.5|
         | 0  3 14|      |10.25|
         
     Resolvendo as matrizes e armezando os resultados em um vetor c:
-    c=[ 0.7575188 ; -1.7763158 ; 1.1127820]
+    c=[ 0 ; 0.7575188 ; -1.7763158 ; 1.1127820 ; 0] // Em que os zeros extras no início e fim
+  //são os valores da segunda derivada nos extremos (já que estes são estimados por retas)
+
+    Como o ponto se encontra entre x(3) e x(2), calculamos as constantes 'b' e 'd' no ponto como:
+    b= ddf(2)- (h(2)/3)*(2*c(2)+c(3)) ; d= (c(3)-c(2))/(3*h(2))
+    b= 2.8483709 ; d= -0.2111529
+    Sendo k= 12.7-11= 1.7000000, temos que f(x)≈ y(2)+b*k+c(2)*k^2+d*k^3= 14.994066
