@@ -1,3 +1,4 @@
+// Script alterado a partir do enviado pelo professor
 function ye=splines(x, y, xe, tipo, vetor)
     /* onde o y(a), b, c, d são vetores com coeficientes das (n-1)
     cubicas naturais
@@ -46,19 +47,14 @@ function ye=splines(x, y, xe, tipo, vetor)
                 A(i+o,j) = h(i);
             end
         end
-        printf("A(%d)\n", i)
-        disp(A(i+o, :))
         f(i+o) = 3*(ddf(i+1)-ddf(i));
     end
-    disp(A)
-    //disp(f)
     c = zeros (n, 1);
     if tipo=='n' then
         c(2:n-1,1) = A\f;
     else
         c=A\f
     end
-    disp(c)
     for i=1:n-1
         d(i) = (c(i+1)-c(i))/(3*h(i));
         b(i) = ddf(i)- (h(i)/3)*(2*c(i)+c(i+1));
@@ -68,9 +64,7 @@ function ye=splines(x, y, xe, tipo, vetor)
             j = i;
         end
     end
-    printf("j: %d\nb: %g | d: %g\n", j, b(j), d(j))
     k = xe - x(j);
-    printf("k: %g\n", k)
     ye = y(j) + b(j)*k + c(j)*k^2 + d(j)*k^3;
     //construindo as splines
     for j=1:n-1
