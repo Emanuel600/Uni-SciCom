@@ -25,3 +25,5 @@
     b= ddf(2)- (h(2)/3)*(2*c(2)+c(3)) ; d= (c(3)-c(2))/(3*h(2))
     b= 2.8483709 ; d= -0.2111529
     Sendo k= 12.7-11= 1.7000000, temos que f(x)≈ y(2)+b*k+c(2)*k^2+d*k^3= 14.994066
+
+    Resultado conforma com o resultado do script
