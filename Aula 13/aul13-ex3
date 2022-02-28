@@ -39,6 +39,8 @@
     b= 0 ; d= 0.25
     
     Sendo k= 1.5-1= 0.5, temos que f(k)≈ y(1)+b*k+c(1)*k^2+d*k^3= 1.03125
+    
+    Resultado conforme com o resultado do script
 
     Para aproximar a velocidade do robô, podemos derivar f(k) para o instante k e o resultado será
   a velocidade instantânea aproximada do robô.
