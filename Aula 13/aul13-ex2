@@ -10,7 +10,7 @@
     ddf=[ -1 0.6 -1 ]
     
     Criamos com estes as matrizes 'A' e 'f':
-    A=[ h(2) -(h(1)+h(2)) h(1) 0 ; 2*(h(1)+h(2)) h(2) 0 0 ; h(2) 2*(h(2)+h(3)) h(3) 0 ; h(2) -(h(1)+h(2)) h(1) 0 ]
+    A=[ h(2) -(h(1)+h(2)) h(1) 0 ; 2*(h(1)+h(2)) h(2) 0 0 ; h(2) 2*(h(2)+h(3)) h(3) 0 ; 0 h(3) -(h(2)+h(3)) h(2) ]
     f=[ 0 ; 3*(ddf(2)-ddf(1)) ; 3*(ddf(3)-ddf(2)) ; 0]
     
         |2.5  -4 1.5 0|     | 0.0|
@@ -20,7 +20,7 @@
         
     Resolvendo as matrizes e armazenando o resultado em um vetor 'c':
     c=A\f
-    c=[ 0.6920771 ; -0.2946467 ; -1.9391863 ; 0 ]
+    c=[ 0.6920771 ; -0.2946467 ; -1.9391863 ; -3.2548180 ]
     
     Como o ponto se encontra entre x(3) e x(2), calculamos as constantes 'b' e 'd' no ponto como:
     b= ddf(2) - (h(2)/3)*(2*c(2)+c(3)) ; d= (c(3)-c(2))/(3*h(2))
