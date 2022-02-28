@@ -27,3 +27,5 @@
     b= 2.7070664 ; d= -0.2192719
     
     Sendo k= 5-4.5= 0.5, temos que f(x)≈ y(2)+b*k+c(2)*k^2+d*k^3= 2.2524625
+
+    Resultado conforma com o resultado do script
