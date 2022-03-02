@@ -40,11 +40,11 @@ function ye=splines(x, y, xe, tipo, vetor)
     for i = 1:n-2
         for j = 1:n-2+o
             if i == j then
-                A(i+o,j) = 2*(h(i)+h(i+1));
+                A(i+o,j+o) = 2*(h(i)+h(i+1));
             elseif j == i+1 then
-                A(i+o,j) = h(j);
+                A(i+o,j+o) = h(j);
             elseif i == j+1 then
-                A(i+o,j) = h(i);
+                A(i+o,j+o) = h(i);
             end
         end
         f(i+o) = 3*(ddf(i+1)-ddf(i));
