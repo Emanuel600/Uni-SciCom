@@ -1,0 +1,56 @@
+    Para testar as interpolações, serão utilizadas funções definidas para gerar os pontos e
+  verificar o erro real da aproximação.
+  
+    == Primeira ==
+    f(x)= 3x^3-2x^2+3x-15
+    
+    x= [1 2 3 4 5 6]
+    y= 3*x.^3-2*x.^2+3*x-15= [ -11 7 57 157 325 579 ]
+    
+    Para f(1.5) temos:
+    == Polinomial:
+    ye= -4.875 com erro= 0%
+    == Newton:
+    ye= -4.875 com erro= 0%
+    == Lagrange:
+    ye= -4.875 com erro= 0%
+    == Splines:
+    = Natural:
+    ye= -4.2033493 com erro= -13.777451%
+    = Clamped: f'(1)=9*1^2-4*1+3=8 e f'(6)=9*6^2-4*6+3=303
+    ye= -4.8394337 com erro= -0.7295651%
+    = Not-A-Knot:
+    ye= -5.6406250 com erro= -15.705128%
+    
+    == Segunda ==
+    f(x)= log(3*x)
+    x= [ 1 2 3 4 5 6 ]
+    y= [ 1.0986123 1.7917595 2.1972246 2.4849066 2.7080502 2.8903718 ]
+    
+    Para f(3.25) temos:
+    == Polinomial: // Resultado inesperado ao usar um polinômia de grau 2
+    ye= 2.2767838 com erro= 0.0212299%, fazendo com os pontos x=[2 3 4]: ye= 2.2801873 com erro= 0.1282230%
+    == Newton: // Mesmo resultado com menos esforço computacional
+    ye= 2.2767838 com erro= 0.0212299%
+    == Lagrange:
+    ye= 2.2767838 com erro= 0.0212299%
+    == Splines:
+    = Natural:
+    ye= 2.2749333 com erro= 0.1024887%
+    = Clamped:
+    ye= 2.2699132 com erro= 0.3229326%
+    = Not-A-Knot
+    ye= 2.2749483 com erro= 0.1018321%
+    
+    == Terceira ==
+    f(x)= sin(3*x-5)
+    x=[ 1 2 3 4 5 6 ]
+    y=[ -0.9092974 0.841471 -0.7568025 0.6569866 -0.5440211 0.420167]
+    
+    Para f(4.39): Valor real= -0.7264798
+    == Polinomial:
+    ye= 0.7045035 com erro= 196.97496%, com x= [ 2 3 4 ]: ye= 2.0247839 e erro= 378.71168%
+    == Newton:
+    ye= 0.7045035 com erro= 196.97496%, com x= [2 3 4]: ye= -0.4404031 e erro= 39.378481%
+    == Lagrange:
+    ye= 0.7045035 com erro= 196.97496%, com x= [2 3 4]: ye= -0.4404031 e erro= 39.378481%
