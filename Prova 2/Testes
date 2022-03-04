@@ -7,7 +7,7 @@
     x= [1 2 3 4 5 6]
     y= 3*x.^3-2*x.^2+3*x-15= [ -11 7 57 157 325 579 ]
     
-    Para f(1.5) temos:
+    Para f(1.5) temos: Valor real= -4.875
     == Polinomial:
     ye= -4.875 com erro= 0%
     == Newton:
@@ -27,19 +27,19 @@
     x= [ 1 2 3 4 5 6 ]
     y= [ 1.0986123 1.7917595 2.1972246 2.4849066 2.7080502 2.8903718 ]
     
-    Para f(3.25) temos:
+    Para f(3.25) temos: Valor real= 2.2772673
     == Polinomial: // Resultado inesperado ao usar um polinômia de grau 2
     ye= 2.2767838 com erro= 0.0212299%, fazendo com os pontos x=[2 3 4]: ye= 2.2801873 com erro= 0.1282230%
     == Newton: // Mesmo resultado com menos esforço computacional
-    ye= 2.2767838 com erro= 0.0212299%
+    ye= 2.2767838 com erro= 0.0212299%, com x=[2 3 4]: ye= 2.2801873 com erro= 0.1282230%
     == Lagrange:
-    ye= 2.2767838 com erro= 0.0212299%
+    ye= 2.2767838 com erro= 0.0212299%, com x=[2 3 4]: ye= 2.2801873 com erro= 0.1282230%
     == Splines:
     = Natural:
     ye= 2.2749333 com erro= 0.1024887%
     = Clamped:
     ye= 2.2699132 com erro= 0.3229326%
-    = Not-A-Knot
+    = Not-A-Knot:
     ye= 2.2749483 com erro= 0.1018321%
     
     == Terceira ==
@@ -49,8 +49,15 @@
     
     Para f(4.39): Valor real= -0.7264798
     == Polinomial:
-    ye= 0.7045035 com erro= 196.97496%, com x= [ 2 3 4 ]: ye= 2.0247839 e erro= 378.71168%
+    ye= 0.7045035 com erro= 196.97496%, com x= [3 4 5]: ye= 0.4996237 e erro= 168.77324%
     == Newton:
-    ye= 0.7045035 com erro= 196.97496%, com x= [2 3 4]: ye= -0.4404031 e erro= 39.378481%
+    ye= 0.7045035 com erro= 196.97496%, com x= [3 4 5]: ye= 0.4996237 e erro= 168.77324%
     == Lagrange:
-    ye= 0.7045035 com erro= 196.97496%, com x= [2 3 4]: ye= -0.4404031 e erro= 39.378481%
+    ye= 0.7045035 com erro= 196.97496%, com x= [3 4 5]: ye= 0.4996237 e erro= 168.77324%
+    == Splines:
+    = Natural:
+    ye= 0.3702374 com erro= 150.96321%, com x=[3 4 5]: ye= 0.4389728 e erro= 160.42464%
+    = Clamped: f'(1)=3*cos(-2) e f'(6)=3*cos(13)
+    ye= 0.2624758 com erro= 136.12981%, com x=[3 4 5]: ye= 0.4532327 e erro= 162.38752%
+    = Noa-A-Knot:
+    ye= 0.4798600 com erro= 166.05277%, com x=[3 4 5]: ye= 0.6437343 e erro= 188.61008%
