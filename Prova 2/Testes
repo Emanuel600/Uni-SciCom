@@ -81,3 +81,51 @@
     ye= 0.8568240 com erro= 1.7257341%
     = Not-A-Knot:
     ye= 0.8435064 com erro= 0.1446086%
+
+    == Quinta ==
+    f(x)=cos(5x/7)
+    x=[ 0 3 4 5 7 9 ]
+    y= cos(5*x/7)= [ 1 -0.5413659 -0.9598162 -0.9090341 0.2836622 0.98945 ]
+    
+    Para f(1): Valor real= 0.7555613
+    == Polinomial:
+    ye= 0.9134697 com erro= 20.899479%
+    == Newton:
+    ye= 0.9134697 com erro= 20.899479%
+    == Lagrange:
+    ye= 0.9134697 com erro= 20.899479%
+    == Splines:
+    = Natural:
+    ye= 0.4857559 com erro= 35.709275%
+    = Clamped: f'(0)= 0 e f'(9)= -5*sin(45/7)/7
+    ye= 0.7716974 com erro= 2.1356430%
+    = Not-A-Knot:
+    ye= 1.4592643 com erro= 93.136438%
+    
+    Para f(8): Valor real= 0.8424943
+    == Polinomial:
+    ye= 0.9003290 com erro= 6.8646987%
+    == Newton:
+    ye= 0.9003290 com erro= 6.8646987%
+    == Lagrange:
+    ye= 0.9003290 com erro= 6.8646987%
+    == Splines:
+    = Natural:
+    ye= 0.7171441 com erro= 14.878462%
+    = Clamped: f'(0)= 0 e f'(9)= -5*sin(45/7)/7
+    ye= 0.7945834 com erro= 5.6867881%
+    = Not-A-Knot:
+    ye= 0.8501425 com erro= 0.9078110%
+    
+    => Resultado <=
+    Ao analisar as saídas, se percebe que os métodos "Polinomial, Newton e Lagrange" sempre
+  concordam em seu valor estimado apesar de utilizarem formas diferentes de calcular a estimativa.
+  
+    As splines rotinamente performam pior do que os métodos "Polinomial, Newton e Lagrange" com
+  exceção de funções trigonométricas. Quando é levado em consideração que splines foram feitas para
+  estimar valores de funções que não apresentam grande variação, este resultado é esperado dos testes.
+  
+    Quando se leva tudo isto em consideração, o método de Newton parece ser o melhor método na grande
+  maioria das situações. O motivo de escolher uma spline seria mais sobre calcular o trajeto de um
+  objeto que há de passar por certos pontos no espaço (sendo que o tipo específico de spline deve ser
+  escolhido levando em conta suas características).
