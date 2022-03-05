@@ -1,0 +1,30 @@
+    A regra 3/8 de Simpson é dada por: I=(b-a)(f(x0)+3f(x1)+3f(x2)+f(x3))/8 para cada intervalo [a,b]
+    
+    Somando para todos os segmentos, temos em pseudo-código:
+    """
+    h=(b-a)/3n
+    x=a:h:b
+    I=0
+    
+    for i=1:n
+        I+=f(x[3*i-2])+3*f(x[3*i-1])+3*f(x[3*i])+f(x[3*i+1])
+    end
+    
+    I*=3*h/8
+    return I
+    """
+    Aplicando isso para o problema dado:
+    h=(30-8)/(6*3) =1+2/9
+    x=8:h:30
+    f(x)=2e3*log(14e4/[14e4-21e2*x]-9.8*x)
+    
+    Para cada segmento 'In':
+    I1= f(x[1])+3*f(x[2])+3*f(x[3])+f(x[4])=    1785.1558
+    I2= f(x[4])+3*f(x[5])+3*f(x[6])+f(x[7])=    2565.1474
+    I3= f(x[7])+3*f(x[8])+3*f(x[9])+f(x[10])=   3421.5118
+    I4= f(x[10])+3*f(x[11])+3*f(x[12])+f(x[13])=4366.0312
+    
+    Somando todos para obter a aproximação:
+    I= (b-a)(I1+I2+I3+I4)/(8*n)= (30-8)(12137.846)/(8*n)= 5563.1795
+    
+    Resultado do script do scilab: 5534.4852
