@@ -1,3 +1,5 @@
+    == Calculo Numérico ==
+    
     A regra 3/8 de Simpson é dada por: I=(b-a)(f(x0)+3f(x1)+3f(x2)+f(x3))/8 para cada intervalo [a,b]
     
     Somando para todos os segmentos, temos em pseudo-código:
@@ -32,3 +34,7 @@
     Resultado do script do scilab: 11061.337
 
     A conta manual e o resultado do script concordam.
+
+    == Cálculo Analítico ==
+    
+    
