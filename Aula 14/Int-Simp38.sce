@@ -9,7 +9,5 @@ function I=Simp38(a, b, fun, n)
         I=I+fx(3*i-2)+3*fx(3*i-1)+3*fx(3*i)+fx(3*i+1)
     end
     
-    disp(I)
-    
     I=I*(b-a)/(8*n)
 endfunction
