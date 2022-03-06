@@ -23,8 +23,12 @@
     I2= f(x[4])+3*f(x[5])+3*f(x[6])+f(x[7])=    2565.1474
     I3= f(x[7])+3*f(x[8])+3*f(x[9])+f(x[10])=   3421.5118
     I4= f(x[10])+3*f(x[11])+3*f(x[12])+f(x[13])=4366.0312
+    I5= f(x[13])+3*f(x[14])+3*f(x[15])+f(x[16])=5413.4456
+    I6= f(x[16])+3*f(x[17])+3*f(x[18])+f(x[19])=6582.5349
     
     Somando todos para obter a aproximação:
-    I= (b-a)(I1+I2+I3+I4)/(8*n)= (30-8)(12137.846)/(8*n)= 5563.1795
+    I= (b-a)(I1+I2+I3+I4+I5+I6)/(8*n)= (30-8)(24133.827)/(8*n)= 11061.337
     
-    Resultado do script do scilab: 5534.4852
+    Resultado do script do scilab: 11061.337
+
+    A conta manual e o resultado do script concordam.
