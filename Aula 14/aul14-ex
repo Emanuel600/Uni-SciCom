@@ -1,0 +1,81 @@
+    == Cálculo Numérico ==
+    
+    A regra 3/8 de Simpson é dada por: I=(b-a)(f(x0)+3f(x1)+3f(x2)+f(x3))/8 para cada intervalo [a,b]
+    
+    Somando para todos os segmentos, temos em pseudo-código:
+    """
+    h=(b-a)/3n
+    x=a:h:b
+    I=0
+    
+    for i=1:n
+        I+=f(x[3*i-2])+3*f(x[3*i-1])+3*f(x[3*i])+f(x[3*i+1])
+    end
+    
+    I*=3*h/8
+    return I
+    """
+    Aplicando isso para o problema dado:
+    h=(30-8)/(6*3) =1+2/9
+    x=8:h:30
+    f(x)=2e3*log(14e4/[14e4-21e2*x]-9.8*x)
+    
+    Para cada segmento 'In':
+    I1= f(x[1])+3*f(x[2])+3*f(x[3])+f(x[4])=    1785.1558
+    I2= f(x[4])+3*f(x[5])+3*f(x[6])+f(x[7])=    2565.1474
+    I3= f(x[7])+3*f(x[8])+3*f(x[9])+f(x[10])=   3421.5118
+    I4= f(x[10])+3*f(x[11])+3*f(x[12])+f(x[13])=4366.0312
+    I5= f(x[13])+3*f(x[14])+3*f(x[15])+f(x[16])=5413.4456
+    I6= f(x[16])+3*f(x[17])+3*f(x[18])+f(x[19])=6582.5349
+    
+    Somando todos para obter a aproximação:
+    I= (b-a)(I1+I2+I3+I4+I5+I6)/(8*n)= (30-8)(24133.827)/(8*n)= 11061.337
+    
+    Resultado do script do scilab: 11061.337
+
+    A conta manual e o resultado do script concordam.
+
+    == Cálculo Analítico ==
+    
+    Podemos separar a conta em duas equações:
+    1 = int(8,30)(2e3*ln(14e4/[14e4-2100*t]))dt
+    2 = int(8,30)(-9.8*t)dt=[(-9.8*t^2)/2](8,30)=-4096.4
+    
+    A partir destas, podemos separar a equação 1 em mais duas equações
+    1.1 = 2e3
+    1.2 = int(8,30)(ln(41e4/[14e4-2100*t]))dt
+    
+    A equação 1.2 pode ser resolvida com a seguinte substituição:
+    u=14e4-2100*t com du/dt=-2100 e dt=du/-2100
+    
+    Sendo que u está no intervelo [14e4-2100*8, 14e4-2100*30]
+    Assim u pertence a [123200, 77000]
+    
+    Assim temos a seguinte integral:
+    1.2 = int(123200, 77000)(ln(14e4/u))du/-2100
+    1.2 = (1/-2100)*int(123200, 77000)(ln(14e4/u))du
+    
+    Podemos separar a equação 1.2 em mais duas equações
+    1.2.1 = (1/-2100)
+    1.2.2 = int(123200, 77000)(ln(14e4/u))du
+    
+    Podemos re-escrever ln(14e4/u) como ln(14e4)-ln(u) e com isso temos a integral
+    1.2.2 = int(123200, 77000)(ln(14e4)-ln(u))du
+    1.2.2 = int(123200, 77000)(-ln(u))du + [ln(14e4)u](123200, 77000)
+    1.2.2 = int(123200, 77000)(-ln(u))du - 547442.17
+    
+    Resolvendo a integral:
+    1.2.2 = [u-u*ln(u)](123200, 77000) - 547442.17
+    1.2.2 = 531526.55 - 547442.17 = -15915.620
+    
+    Resolvendo para 1.2:
+    1.2 = (1.2.1)*(1.2.2)= 7.5788667
+    Resolvendo para 1:
+    1 = (1.1)*(1.2)= 15157.733
+    
+    Resolvendo para a I:
+    I = (1)+(2)= 11061.333
+    
+    == Cálculo do Erro Real ==
+    
+    100*abs( (11061.333-11061.337)/11061.333 )= 0.0000362%
