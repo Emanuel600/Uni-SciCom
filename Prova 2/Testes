@@ -18,9 +18,9 @@
     = Natural:
     ye= -4.2033493 com erro= -13.777451%
     = Clamped: f'(1)=9*1^2-4*1+3=8 e f'(6)=9*6^2-4*6+3=303
-    ye= -4.8394337 com erro= -0.7295651%
+    ye= -4.6985646 com erro= 3.6191878%
     = Not-A-Knot:
-    ye= -5.6406250 com erro= -15.705128%
+    ye= -4.875 com erro= 0%
     
     == Segunda ==
     f(x)= log(3*x)
@@ -28,7 +28,7 @@
     y= [ 1.0986123 1.7917595 2.1972246 2.4849066 2.7080502 2.8903718 ]
     
     Para f(3.25) temos: Valor real= 2.2772673
-    == Polinomial: // Resultado inesperado ao usar um polinômia de grau 2
+    == Polinomial: // Resultado inesperado ao reduzir o intervalo
     ye= 2.2767838 com erro= 0.0212299%, fazendo com os pontos x=[2 3 4]: ye= 2.2801873 com erro= 0.1282230%
     == Newton: // Mesmo resultado com menos esforço computacional
     ye= 2.2767838 com erro= 0.0212299%, com x=[2 3 4]: ye= 2.2801873 com erro= 0.1282230%
@@ -38,29 +38,29 @@
     = Natural:
     ye= 2.2749333 com erro= 0.1024887%
     = Clamped: f'(1)=1 e f'(6)=1/6
-    ye= 2.2699132 com erro= 0.3229326%
+    ye= 2.2725449 com erro= 0.2073705%
     = Not-A-Knot:
-    ye= 2.2749483 com erro= 0.1018321%
+    ye= 2.2765100 com erro= 0.0332523%
     
     == Terceira ==
     f(x)= sin(3*x-5)
     x=[ 1 2 3 4 5 6 ]
     y= sin(3*x-5)= [ -0.9092974 0.841471 -0.7568025 0.6569866 -0.5440211 0.420167]
     
-    Para f(4.39): Valor real= -0.7264798
+    Para f(4.39): Valor real= 0.9504804
     == Polinomial:
-    ye= 0.7045035 com erro= 196.97496%, com x= [3 4 5]: ye= 0.4996237 e erro= 168.77324%
+    ye= 0.7045035 com erro= 25.879217%, com x= [3 4 5]: ye= 0.4996237 e erro= 47.434612%
     == Newton:
-    ye= 0.7045035 com erro= 196.97496%, com x= [3 4 5]: ye= 0.4996237 e erro= 168.77324%
+    ye= 0.7045035 com erro= 25.879217%, com x= [3 4 5]: ye= 0.4996237 e erro= 47.434612%
     == Lagrange:
-    ye= 0.7045035 com erro= 196.97496%, com x= [3 4 5]: ye= 0.4996237 e erro= 168.77324%
+    ye= 0.7045035 com erro= 25.879217%, com x= [3 4 5]: ye= 0.4996237 e erro= 47.434612%
     == Splines:
     = Natural:
-    ye= 0.3702374 com erro= 150.96321%, com x=[3 4 5]: ye= 0.4389728 e erro= 160.42464%
+    ye= 0.3702374 com erro= 61.047339%, com x=[3 4 5]: ye= 0.4389728 e erro= 53.815691%
     = Clamped: f'(1)=3*cos(-2) e f'(6)=3*cos(13)
-    ye= 0.2624758 com erro= 136.12981%, com x=[3 4 5]: ye= 0.4532327 e erro= 162.38752%
-    = Noa-A-Knot:
-    ye= 0.4798600 com erro= 166.05277%, com x=[3 4 5]: ye= 0.6437343 e erro= 188.61008%
+    ye= 0.2759460 com erro= 70.967733%, com x=[3 4 5]: ye= 0.4532327 e erro= 52.315407%
+    = Not-A-Knot:
+    ye= 0.4643561 com erro= 51.145119%, com x=[3 4 5]: ye= 0.6437343 e erro= 32.272742%
 
     == Quarta ==
     f(x)=tan(x/5)
@@ -77,10 +77,10 @@
     == Splines:
     = Natural:
     ye= 0.8462798 com erro= 0.4738754%
-    = Clamped: f'(1)= sec(1/5)^2/5 e f'(2)= sec(2/5)^2/5
-    ye= 0.8568240 com erro= 1.7257341%
+    = Clamped: f'(1)= sec(1/5)^2/5 e f'(2)= sec(6/5)^2/5
+    ye= 0.8567303 com erro= 1.7146073%
     = Not-A-Knot:
-    ye= 0.8435064 com erro= 0.1446086%
+    ye= 0.8435087 com erro= 0.1448819%
 
     == Quinta ==
     f(x)=cos(5x/7)
@@ -98,9 +98,9 @@
     = Natural:
     ye= 0.4857559 com erro= 35.709275%
     = Clamped: f'(0)= 0 e f'(9)= -5*sin(45/7)/7
-    ye= 0.7716974 com erro= 2.1356430%
+    ye= 0.7305264 com erro= 3.3134297%
     = Not-A-Knot:
-    ye= 1.4592643 com erro= 93.136438%
+    ye= 0.7218440 com erro= 4.4625605%
     
     Para f(8): Valor real= 0.8424943
     == Polinomial:
@@ -113,19 +113,21 @@
     = Natural:
     ye= 0.7171441 com erro= 14.878462%
     = Clamped: f'(0)= 0 e f'(9)= -5*sin(45/7)/7
-    ye= 0.7945834 com erro= 5.6867881%
+    ye= 0.7950093 com erro= 5.6362349%
     = Not-A-Knot:
-    ye= 0.8501425 com erro= 0.9078110%
+    ye= 0.8527270 com erro= 1.2145688%
     
     => Resultado <=
     Ao analisar as saídas, se percebe que os métodos "Polinomial, Newton e Lagrange" sempre
   concordam em seu valor estimado apesar de utilizarem formas diferentes de calcular a estimativa.
   
-    As splines rotinamente performam pior do que os métodos "Polinomial, Newton e Lagrange" com
-  exceção de funções trigonométricas. Quando é levado em consideração que splines foram feitas para
-  estimar valores de funções que não apresentam grande variação, este resultado é esperado dos testes.
+    As splines rotinamente performam pior do que os métodos "Polinomial, Newton e Lagrange" em funções
+  com maior variação. Quando é levado em consideração que splines foram feitas para estimar valores de
+  funções que não apresentam grande variação, este resultado conforma com o esperado.
   
-    Quando se leva tudo isto em consideração, o método de Newton parece ser o melhor método na grande
-  maioria das situações. O motivo de escolher uma spline seria mais sobre calcular o trajeto de um
-  objeto que há de passar por certos pontos no espaço (sendo que o tipo específico de spline deve ser
-  escolhido levando em conta suas características).
+    Quando tudo isso é levado em consideração, o método de Newton parece ser o melhor método na grande
+  maioria das situações, com exceção de funções que apresentam pouca variação no intervalo dado (isto pode
+  ser visto com um gráfico dos pontos a serem interpolados). Um outro motivo de escolher uma spline seria para
+  calcular o trajeto de um objeto que há de passar por certos pontos no espaço em tempo pré-determinado, uma
+  vez que apresentam uma trajetória mais natural (sendo que o tipo específico de spline deve ser escolhido
+  levando em conta suas características).
