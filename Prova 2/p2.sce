@@ -15,13 +15,11 @@ function ye=Interpolar()
     
     escolhas = ["Polinomial" ; "Newton" ; "Lagrange" ; "Splines"]
     met=x_choose(escolhas, "Escolha o método de interpolação desejado", "Cancelar")
-    
-    if met==0 then // Caso 'Cancelar' seja escolhido
+
+    select met // Caso 'Cancelar' seja escolhido
+    case 0
         error("Programa interrompido")
-    end
-    
-    select met
-    case 1
+    case 1 // Polinomial
         A=ones(n,n)
         f=ones(n,1)
         for i=1:n
@@ -34,7 +32,7 @@ function ye=Interpolar()
         for i=1:n
             ye=ye+p(i)*xe^(i-1)
         end
-    case 2
+    case 2 // Newton
         k = 0
         l = n
         A(:,1) = x'
@@ -42,7 +40,6 @@ function ye=Interpolar()
         for j=3:n+1
             for i=l:-1:2
                 A(i-1,j) = (A(i,j-1)-A(i-1,j-1))/(A(i+k,1)-A(i-1,1))
-                disp(A)
             end
             k = k+1
             l = l-1
@@ -53,7 +50,7 @@ function ye=Interpolar()
             xt=xt*(xe-x(j))
             ye = ye+A(1,j+2)*xt
         end
-    case 3
+    case 3 // Lagrange
         soma = 0;
         for i = 1 : n
             produto = y(i);
@@ -65,7 +62,7 @@ function ye=Interpolar()
             soma = soma + produto;
         end
         ye = soma;
-    case 4
+    case 4 // Splines
         while xe>x(n) | xe<x(1)
             xe=x_mdialog("Valor xe escolhido não se encontra em nenhum intervalo, escolha outro valor.", 'xe', '')
             xe=evstr(xe)
@@ -86,48 +83,40 @@ function ye=Interpolar()
         if met==0 then
             error("Operação interrompida")
         end
-        
+        A = zeros(n, n); // Monta A
+        f = zeros(n, 1); // Monta f
         if (met==2 | met==3) then
-            A = zeros(n, n); // Monta A
-            f = zeros(n, 1); // Monta f
-            o = 1; // Utilizado para facilitar a formação da matriz depois
             select met
-            case 2
-               deri=x_mdialog("Entre com as derivadas nos pontos inicial e final", ["Inicial";"Final"])
+            case 2 // Clamped
+               deri=x_mdialog("Entre com as derivadas nos pontos inicial e final", ["Inicial";"Final"], ['';''])
                deri=evstr(deri)
                A(1,1:2)=[2*h(1) h(1)]
                A(n,(n-1):n)=[h(n-1) 2*h(n-1)]
                
                f(1,1)=3*(ddf(1)-deri(1))
                f(n,1)=3*(deri(1)-ddf(n-1))
-           case 3
+           case 3 // Not-A-Knot
                A(1,1:3)=[h(2) -(h(1)+h(2)) h(1)]
                A(n,(n-2):n)=[h(n-1) -(h(n-2)+h(n-1)) h(n-2)]
            end
-       elseif(met==1) then
-            A = zeros(n-2, n-2); //monta A
-            f = zeros(n-2,1); //monta f
-            o = 0;
+       else // Natural
+            A(1,1)=1
+            A(n,n)=1
         end
         //Gerar a matriz A e o vetor coluna f
-        for i = 1:n-2
-            for j = 1:n-2+o
+        for i = 2:n-1
+            for j = 1:n
                 if i == j then
-                    A(i+o,j+o) = 2*(h(i)+h(i+1));
+                    A(i,j) = 2*(h(i-1)+h(i));
                 elseif j == i+1 then
-                    A(i+o,j+o) = h(j);
+                    A(i,j) = h(i);
                 elseif i == j+1 then
-                    A(i+o,j+o) = h(i);
+                    A(i,j) = h(i-1);
                 end
             end
-            f(i+o) = 3*(ddf(i+1)-ddf(i));
+            f(i) = 3*(ddf(i)-ddf(i-1));
         end
-        c = zeros (n, 1);
-        if met==1 then
-            c(2:n-1,1) = A\f;
-        else
-            c=A\f
-        end
+        c=A\f
         for i=1:n-1
             d(i) = (c(i+1)-c(i))/(3*h(i));
             b(i) = ddf(i)- (h(i)/3)*(2*c(i)+c(i+1));
@@ -139,17 +128,6 @@ function ye=Interpolar()
         end
         k = xe - x(j);
         ye = y(j) + b(j)*k + c(j)*k^2 + d(j)*k^3;
-        //construindo as splines
-        for j=1:n-1
-            xx = linspace(x(j), x(j+1), 1000);
-            k = xx-x(j);
-            yy = y(j) + b(j)*k + c(j)*k .^2 + d(j)*k .^3;
-            plot2d(xx, yy);
-        end
-        plot(x, y, 'ro')
-        ylabel("Splines");
-        xlabel("x");
-        xgrid;
     end
     // gerando saída
     imprime = msprintf('O valor interpolado em x= %g é %g%c', xe, ye, ';') // gerando string
