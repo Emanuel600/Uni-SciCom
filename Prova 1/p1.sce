@@ -1,4 +1,4 @@
-// Cálculo da média aritmética de n valores
+// Cálculo da raiz de uma função qualquer
 // Entrada de dados
 clear ; i=0
 inter_err=x_mdialog("Entre com so limites inferior (a) e superior (b) e sua precisão desejada (es):", ['a';'b';'es'], ['1.2';'1.1';'1e-4'])
@@ -6,7 +6,7 @@ inter_err=x_mdialog("Entre com so limites inferior (a) e superior (b) e sua prec
 a=evstr(inter_err(1))
 b=evstr(inter_err(2))
 es=evstr(inter_err(3))
-ea=100 // Caso a raíz não seja calculada
+ea=100 // Caso a raiz não seja calculada
 x=linspace(a,b,100)
 
 funcao=x_dialog('Entre com a função','x.^3+3*x-5')
