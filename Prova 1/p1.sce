@@ -1,4 +1,4 @@
-// Cálculo da raiz de uma função qualquer
+// Cálculo da média aritmética de n valores
 // Entrada de dados
 clear ; i=0
 inter_err=x_mdialog("Entre com so limites inferior (a) e superior (b) e sua precisão desejada (es):", ['a';'b';'es'], ['1.2';'1.1';'1e-4'])
@@ -6,7 +6,7 @@ inter_err=x_mdialog("Entre com so limites inferior (a) e superior (b) e sua prec
 a=evstr(inter_err(1))
 b=evstr(inter_err(2))
 es=evstr(inter_err(3))
-ea=100 // Caso a raiz não seja calculada
+ea=100 // Caso a raíz não seja calculada
 x=linspace(a,b,100)
 
 funcao=x_dialog('Entre com a função','x.^3+3*x-5')
@@ -17,6 +17,7 @@ clear y
 
 escolhas = ["Método da bisecção" ; "Método da falsa posição" ; "Método de Newton-Raphson" ; "Método da secante"]
 met=x_choose(escolhas, "Escolha o método de resolução desejado a partir do gráfico", "Cancelar")
+clear escolhas // Liberar memória
 
 if met==1 | met==2 then
     temp=x_mdialog("Entre com os valores a esrquerda e a direita da raíz:", ['xl' ; 'xu'], [inter_err(1) ; inter_err(2)])
@@ -68,7 +69,7 @@ end // Cálculo da raíz utilizando ou o métdo da falsa posição ou o métdo d
 
 if met==3 | met==4 then
     select met
-    case 3
+    case 3 // Mostrar a função para o usuário facilita no cálculo da derivada
         temp=x_mdialog("Entre com: Valor inicial(x0), Derivada(deri) e o número máximo de iterações(maxi) para f(x)="+funcao, ['x0';'deri';'maxi'],['0';' ';'50'])
     case 4
         temp=x_mdialog("Entre com: Valor inicial(x0), Perturbação em torno de x(dxi) e o número máximo de iterações(maxi)", ['x0';'dxi';'maxi'],['0';'1e-4';'50'])
@@ -116,6 +117,7 @@ if met==3 | met==4 then
             printf("\nf(%f) = %f\n",xi,fxi);
         end
     end
+    clear temp // Liberar memória
 end
 iter=i
 // gerando saída
@@ -164,5 +166,3 @@ endfunction
 function close_j()
     close()
 endfunction
-
-clear
