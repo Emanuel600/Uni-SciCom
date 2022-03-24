@@ -1,4 +1,4 @@
-// Cálculo da média aritmética de n valores
+// Cálculo da raiz de uma função qualquer
 // Entrada de dados
 clear ; i=0
 inter_err=x_mdialog("Entre com so limites inferior (a) e superior (b) e sua precisão desejada (es):", ['a';'b';'es'], ['1.2';'1.1';'1e-4'])
@@ -65,7 +65,7 @@ if met==1 | met==2 then
     end
     raiz = xr_novo;
     x = xr_novo ; fxi = evstr(funcao)
-end // Cálculo da raíz utilizando ou o métdo da falsa posição ou o métdo da bisecção já foi feito
+end // Cálculo da raiz utilizando ou o métdo da falsa posição ou o métdo da bisecção já foi feito
 
 if met==3 | met==4 then
     select met
