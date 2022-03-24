@@ -161,4 +161,8 @@ function TRT_Sobre()
     messagebox(msg, gettext("About"), "info", "modal");
 endfunction
 
+function close_j()
+    close()
+endfunction
+
 clear
