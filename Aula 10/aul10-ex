@@ -46,7 +46,11 @@
           2.
       """
     == Soluão Analítica ==
-    Não sei como resolver...
+    wolfram: y=(92*e^2x)/(C+e^2x)
+             y(0)=10 -> C=8.2
+             
+             y(2)=(92*e^4)/(8.2+e^4)
+             y(2)=79.986907264
     
     == Erro Verdadeiro ==
-    Como não consigo resolver, esta parte fica incompleta
+    100*|(79.986907264-79.092795)/79.986907264|=1.11782327206%
